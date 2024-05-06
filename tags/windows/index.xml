@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Windows on Prince 2 lu&#39;s blog</title>
-    <link>/tags/windows/</link>
+    <link>//localhost:1313/tags/windows/</link>
     <description>Recent content in Windows on Prince 2 lu&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 05 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>🇫🇷 PWNME 2023 | Nanobits [Insane]</title>
-      <link>/posts/pwnme_nanobits/writeup/</link>
+      <link>//localhost:1313/posts/pwnme_nanobits/writeup/</link>
       <pubDate>Fri, 05 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>/posts/pwnme_nanobits/writeup/</guid>
+      <guid>//localhost:1313/posts/pwnme_nanobits/writeup/</guid>
       
       <description>Nanobits Premièrement le fichier donné est au format PE, il faudra donc un environnement Windows pour espérer le lancer.
 On utilise Ghidra pour découvrir le binaire, le début est très difficilement compréhensible et on a du mal à se repérer.

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mobile on Prince 2 lu&#39;s blog</title>
-    <link>/tags/mobile/</link>
+    <link>//localhost:1313/tags/mobile/</link>
     <description>Recent content in Mobile on Prince 2 lu&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 05 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/mobile/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/tags/mobile/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>🇫🇷 ph0wn Musical Ear</title>
-      <link>/posts/ph0wn_musical_ear/writeup/</link>
+      <link>//localhost:1313/posts/ph0wn_musical_ear/writeup/</link>
       <pubDate>Sat, 05 Aug 2023 00:00:00 +0000</pubDate>
       
-      <guid>/posts/ph0wn_musical_ear/writeup/</guid>
+      <guid>//localhost:1313/posts/ph0wn_musical_ear/writeup/</guid>
       
       <description>ph0wn Musical Ear Ce challenge etait proposé à l&amp;rsquo;édition 2021 du ph0wn, je n&amp;rsquo;ai pas participé à cette édition mais ait réalisé le challenge plusieurs mois après.
 Le writeup officiel est disponnible ici
