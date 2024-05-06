@@ -18,7 +18,7 @@
 Voici le writeup &amp;ldquo;untended&amp;rdquo; du challenge.
 Initialisation Ce challenge est un binaire ELF x86_64 strippé. Toutes les addresses mentionnées dans ce WU seront à partir de la base: 0x100000
 On retrouve l&amp;rsquo;utilisation de srand dans le main qui utilise en 1er argument l&amp;rsquo;argument pin de notre programme.
-On trouve arapidement un array de chaines d&amp;rsquo;octets qui semble subir plusieurs transformations, notement la fonction 0x10e5ef, appelons la randomize</description>
+On trouve arapidement un array de chaines d&amp;rsquo;octets qui semble subir plusieurs transformations, notement la fonction 0x10e5ef, appelons la randomize.</description>
       
     </item>
     

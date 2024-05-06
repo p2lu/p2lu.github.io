@@ -57,7 +57,7 @@
         },
         "datePublished": "2023-05-05",
         "description": "PWNME 2023 Nanobits writeup",
-        "wordCount":  873 ,
+        "wordCount":  872 ,
         "mainEntityOfPage": "True",
         "dateModified": "2023-05-05",
         "image": {
@@ -190,8 +190,8 @@ stroke-linejoin="round" class="feather feather-home">
 <p><img alt="nanobits" src="/posts/pwnme_nanobits/nanobits.png"></p>
 <p>Premièrement le fichier donné est au format PE, il faudra donc un environnement Windows pour espérer le lancer.</p>
 <p>On utilise Ghidra pour découvrir le binaire, le début est très difficilement compréhensible et on a du mal à se repérer.</p>
-<p>Il n&rsquo;y a aucune chaine de caractère définie en statique dans le programme, le titre nous avait prévenu, on est sur une protection par nanomites</p>
-<p>Usuellement on trouve les nanomites sur des binaires ELF avec des traces comme le syscall PTRACE, qui permet de gérer de manière extérieure le sous-programme</p>
+<p>Il n&rsquo;y a aucune chaine de caractère définie en statique dans le programme, le titre nous avait prévenu, on est sur une protection par nanomites.</p>
+<p>Usuellement on trouve les nanomites sur des binaires ELF avec des traces comme le syscall PTRACE, qui permet de gérer de manière extérieure le sous-programme.</p>
 <p>on pourrait penser au premier abord que la fonction <code>SetUnhandledExceptionFilter</code> en <code>0x00401238</code> fait partie de la protection, mais il faut chercher plus loin.</p>
 <hr>
 <p>Le programme est compilé avec une technique ASLR (Address space layout randomization)</p>
@@ -218,11 +218,11 @@ On peut le confirmer avec l&rsquo;utilisation de la fonction <a href="https://le
 <p>Sur cette grande branche de if on peut se sentir perdu, en fait local_14 n&rsquo;est pas vraiment un array au sens littéral
 <img alt="ghidra_4" src="/posts/pwnme_nanobits/ghidra_4.png"></p>
 <p>Il faut s&rsquo;appuyer de la fonction (toujours obfuquée) <code>SetThreadContext</code> en <code>004028bd</code></p>
-<p>Si on s&rsquo;interesse au <a href="https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setthreadcontext">2eme argument de la fonction</a> on retrouve notre local_14 qui doit être de type <a href="https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-context">CONTEXT</a></p>
-<p>On modifie le type de local_14 en CONTEXT et on a quelque chose de beaucoup plus logique</p>
+<p>Si on s&rsquo;interesse au <a href="https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setthreadcontext">2eme argument de la fonction</a> on retrouve notre local_14 qui doit être de type <a href="https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-context">CONTEXT</a>.</p>
+<p>On modifie le type de local_14 en CONTEXT et on a quelque chose de beaucoup plus logique.</p>
 <p><img alt="ghidra_5" src="/posts/pwnme_nanobits/ghidra_5.png"></p>
-<p>On ne va pas s&rsquo;attarder sur toutes les conditions, le ctf s&rsquo;arrête dans 1H30</p>
-<p>SetThreadContext va modifier les registres du tracee pour le contrôler. Mon idée est de break sur la fonction SetThreadContext dans le programme et récupérer le 2eme argument, notamment EIP qui est un pointeur vers l&rsquo;instruction éxécutée par le programme</p>
+<p>On ne va pas s&rsquo;attarder sur toutes les conditions, le ctf s&rsquo;arrête dans 1H30.</p>
+<p>SetThreadContext va modifier les registres du tracee pour le contrôler. Mon idée est de break sur la fonction SetThreadContext dans le programme et récupérer le 2eme argument, notamment EIP qui est un pointeur vers l&rsquo;instruction éxécutée par le programme.</p>
 <p>Suffit de mettre un breakpoint sur la fonction, récupérer le 2eme argument qui est la structure CONTEXT, récupérer l&rsquo;EIP dans CONTEXT, puis on aurait une bonne idée de ce que fait et ou va le programme à chaque interruption.</p>
 <p>Je met mon breakpoint sur <code>004028b3</code>, puis on ouvre gdb</p>
 <pre tabindex="0"><code>(gdb) b *0x004028b3
@@ -240,23 +240,23 @@ End with a line saying just &#34;end&#34;.
 &gt;end
 (gdb) r
 </code></pre><p>On peut récupérer ces offsets sur WinDBG avec la commande <code>dt _CONTEXT</code></p>
-<p>J&rsquo;ai la flemme donc je le prends sur ghidra directement</p>
+<p>Je décide de le prendre sur ghidra directement.</p>
 <p>Ce qui va m&rsquo;intéresser ça ne va pas être ce qui va être affiché avant la lecture de stdin mais le comportement du programme après.</p>
-<p>On rentre un début de flag qui pourrait valider les 1eres conditions, honnêtement ça marche avec n&rsquo;importe quoi</p>
+<p>On rentre un début de flag qui pourrait valider les 1eres conditions, honnêtement ça marche avec n&rsquo;importe quoi.</p>
 <p><img alt="gdb_1" src="/posts/pwnme_nanobits/gdb_1.png"></p>
-<p>Ce qui nous manque c&rsquo;est le programme debuggé, je lance une instance du programme (sans debug), le programme s&rsquo;ouvre avec son processus enfant, avec ProcessHacker j&rsquo;utilise la fonctions <em>clique droit sur le programme enfant</em>  &gt; Miscellaneous &gt; Detach from debugger</p>
-<p>Puis je l&rsquo;ouvre avec x32dbg avec l&rsquo;option attach,</p>
+<p>Ce qui nous manque c&rsquo;est le programme debuggé, je lance une instance du programme (sans debug), le programme s&rsquo;ouvre avec son processus enfant, avec ProcessHacker j&rsquo;utilise la fonctions <em>clique droit sur le programme enfant</em>  &gt; Miscellaneous &gt; Detach from debugger .</p>
+<p>Puis je l&rsquo;ouvre avec x32dbg avec l&rsquo;option attach.</p>
 <p>Je pose un breakpoint sur la 1ere adresse donnée par gdb (<code>0x005016c3</code>)</p>
 <p><img alt="x32dbg_2" src="/posts/pwnme_nanobits/x32dbg_2.png"></p>
-<p>Je rentre un faux flag ( de préférence le même qu&rsquo;on a mis sur gdb ) sur le programme attaché à gdb, puis l&rsquo;exécution s&rsquo;arrète à notre breakpoint</p>
-<p>Maintenant en utilisant l&rsquo;option &ldquo;set EIP here&rdquo; de x32dbg, à chaque fois que EIP arrive à int3, je le met à la prochaine adresse de EIP donnée par gdb, on passe par la fonction strcspn, mais rapidement j&rsquo;arrive à <code>004015FB</code> au bout du 5e coup</p>
+<p>Je rentre un faux flag ( de préférence le même qu&rsquo;on a mis sur gdb ) sur le programme attaché à gdb, puis l&rsquo;exécution s&rsquo;arrète à notre breakpoint.</p>
+<p>Maintenant en utilisant l&rsquo;option &ldquo;set EIP here&rdquo; de x32dbg, à chaque fois que EIP arrive à int3, je le met à la prochaine adresse de EIP donnée par gdb, on passe par la fonction strcspn, mais rapidement j&rsquo;arrive à <code>004015FB</code> au bout du 5e coup.</p>
 <p><img alt="x32dbg_3" src="/posts/pwnme_nanobits/x32dbg_3.png"></p>
 <p>ici une chaine est xorée caractère par caractère avec la valeur 0x37 puis est comparé à notre entrée.</p>
 <p>Je clique droit puis <em>follow in dump</em> sur <code>pwnme.409020</code></p>
 <p><img alt="x32dbg_3" src="/posts/pwnme_nanobits/x32gdb_4.png"></p>
-<p>On séléctionne les valeurs de 0x67 à 0x4A qui constitue le tableau</p>
+<p>On séléctionne les valeurs de 0x67 à 0x4A qui constitue le tableau.</p>
 <p><a href="https://gchq.github.io/CyberChef/#recipe=From_Hex('Auto')XOR(%7B'option':'Hex','string':'37'%7D,'Standard',false)&input=NjcgNjAgNzkgN0EgNzIgNEMgNzkgMDMgNTkgMDcgNUEgMDYgNDMgMDQgMDIgNjggMDcgNTkgNjggNjAgMDYgNTkgNTMgMDcgNDAgMDIgNjggMTYgMDggMTYgNEEgCg">Pour la suite il suffit de xorer l&rsquo;array avec 37</a></p>
-<p>Merci à Express pour ce challenge</p>
+<p>Merci à Express pour ce challenge.</p>
 
             </div>
         </article></main>

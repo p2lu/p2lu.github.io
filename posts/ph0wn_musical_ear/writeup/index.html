@@ -246,7 +246,7 @@ frida-server-16.1.7-android-x86_64
 vbox86p:/tmp # ./frida-server-16.1.7-android-x86_64
 </code></pre><p>Maintenant la note jouée sera toujours la même ! En allant à 20, pas de flag en vue, uniquement un message <code>reverse the dex banana</code> et un <code>bad decryption key</code>.</p>
 <h2 id="obtenir-le-flag">Obtenir le flag</h2>
-<p>En regardant le fonctionnement de la branche une fois les 20 notes correctement jouées, on remarque l&rsquo;utilisation d&rsquo;une fonction <code>HurryUp</code> qui est ensuite passé dans <code>CanYouWin</code></p>
+<p>En regardant le fonctionnement de la branche une fois les 20 notes correctement jouées, on remarque l&rsquo;utilisation d&rsquo;une fonction <code>HurryUp</code> qui est ensuite passé dans <code>CanYouWin</code>.</p>
 <p><img alt="jadx-2" src="/posts/ph0wn_musical_ear/image-3.png"></p>
 <p>La classe <code>ph0wn.payload.Payload</code> est utilisée mais n&rsquo;est pas référencée dans notre fichier.</p>
 <p><img alt="jadx-3" src="/posts/ph0wn_musical_ear/image-4.png"></p>

@@ -199,9 +199,9 @@ stroke-linejoin="round" class="feather feather-home">
 <h2 id="initialisation">Initialisation</h2>
 <p>Ce challenge est un binaire ELF x86_64 strippé. Toutes les addresses mentionnées dans ce WU seront à partir de la base: <code>0x100000</code></p>
 <p>On retrouve l&rsquo;utilisation de <code>srand</code> dans le main qui utilise en 1er argument l&rsquo;argument <code>pin</code> de notre programme.</p>
-<p>On trouve arapidement un array de chaines d&rsquo;octets qui semble subir plusieurs transformations, notement la fonction <code>0x10e5ef</code>, appelons la <code>randomize</code></p>
+<p>On trouve arapidement un array de chaines d&rsquo;octets qui semble subir plusieurs transformations, notement la fonction <code>0x10e5ef</code>, appelons la <code>randomize</code>.</p>
 <p><img alt="alt text" src="/posts/deck_decoder/image.png"></p>
-<p>Cette fonction <code>randomize</code> sers à initialiser un tableau qui servira juste après au &ldquo;mélange&rdquo; des pointeurs de notre chaine d&rsquo;array</p>
+<p>Cette fonction <code>randomize</code> sers à initialiser un tableau qui servira juste après au &ldquo;mélange&rdquo; des pointeurs de notre chaine d&rsquo;array.</p>
 <p><img alt="alt text" src="/posts/deck_decoder/image-1.png"></p>
 <h2 id="défaire-le-mélange">Défaire le mélange</h2>
 <p>Le 1er objectif sera de reproduire tous les schémas de mélange possibles (entre 0 et 2000). (<em>Félicitation à tous ceux qui ont identifié le nom de <a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">l&rsquo;algorithme de mélange</a></em>).</p>
@@ -218,7 +218,7 @@ stroke-linejoin="round" class="feather feather-home">
 <li>1 octet qui correspond à la taille du buffer</li>
 <li>le buffer de la taille énnoncée</li>
 </ul>
-<p>L&rsquo;array est en plus chiffré en utilisant du RC4. Le RC4 a une propriété de &ldquo;roulement&rdquo;, c&rsquo;est à dire qu&rsquo;initialiser une clée puis chiffrer &ldquo;hello&rdquo; puis &ldquo;world&rdquo; donne un résultat différent que chiffrer &ldquo;world&rdquo; puis &ldquo;hello&rdquo;, l&rsquo;ordre initial de l&rsquo;array a donc une grande importance, le résultat sera correct uniquement si l&rsquo;array est dans le bon ordre</p>
+<p>L&rsquo;array est en plus chiffré en utilisant du RC4. Le RC4 a une propriété de &ldquo;roulement&rdquo;, c&rsquo;est à dire qu&rsquo;initialiser une clée puis chiffrer &ldquo;hello&rdquo; puis &ldquo;world&rdquo; donne un résultat différent que chiffrer &ldquo;world&rdquo; puis &ldquo;hello&rdquo;, l&rsquo;ordre initial de l&rsquo;array a donc une grande importance, le résultat sera correct uniquement si l&rsquo;array est dans le bon ordre.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">ctypes</span> <span class="kn">import</span> <span class="n">CDLL</span>
 </span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Crypto.Cipher.ARC4</span> <span class="kn">import</span> <span class="n">ARC4Cipher</span>
@@ -284,7 +284,7 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>        
 </span></span></code></pre></div><p><img alt="entropie_output" src="/posts/deck_decoder/image-3.png"></p>
 <p>On trouve la seed <code>1203</code></p>
-<p>Cette seed nous donne donc un shellcode correct, on va pouvoir l&rsquo;émuler avec miasm</p>
+<p>Cette seed nous donne donc un shellcode correct, on va pouvoir l&rsquo;émuler avec miasm.</p>
 <h2 id="résolution-du-crackme">Résolution du crackme</h2>
 <p>Il faut être asticieux pour avoir a bruteforce que (100) possibilitées à chaque fois et non 2 octets en s&rsquo;aidant du 1er caractère du flag connu.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl">

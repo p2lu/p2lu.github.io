@@ -15,7 +15,7 @@
       <guid>https://p2lu.github.io/posts/chausette-wu/writeup/</guid>
       
       <description>Chaussette To improve my skills in mastering the symbolic execution framework, I tried to solve this challenge with as many means as possible.
-I skipped the first reversing part which is not the interest here
+I skipped the first reversing part which is not the interest here.
 Introduction about the challenge The goal of the challenge is to solve a lot of &amp;ldquo;puzzle&amp;rdquo;, which consist of a entry of arguments (RDI and RSI (System V ABI x86_64 calling convention)).
 The goal is to find input when RAX==0 at the end of the shellcode.</description>
       

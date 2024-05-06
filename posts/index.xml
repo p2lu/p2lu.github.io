@@ -18,7 +18,7 @@
 Voici le writeup &amp;ldquo;untended&amp;rdquo; du challenge.
 Initialisation Ce challenge est un binaire ELF x86_64 strippé. Toutes les addresses mentionnées dans ce WU seront à partir de la base: 0x100000
 On retrouve l&amp;rsquo;utilisation de srand dans le main qui utilise en 1er argument l&amp;rsquo;argument pin de notre programme.
-On trouve arapidement un array de chaines d&amp;rsquo;octets qui semble subir plusieurs transformations, notement la fonction 0x10e5ef, appelons la randomize</description>
+On trouve arapidement un array de chaines d&amp;rsquo;octets qui semble subir plusieurs transformations, notement la fonction 0x10e5ef, appelons la randomize.</description>
       
     </item>
     
@@ -30,7 +30,7 @@ On trouve arapidement un array de chaines d&amp;rsquo;octets qui semble subir pl
       <guid>https://p2lu.github.io/posts/mazeofpower-wu/writeup/</guid>
       
       <description>MazeOfPower This challenge was a insane reverse engineering challenge from the Hack The Box Apocalypse 2024 CTF
-Initial Recon We are facing a ELF x86_64 binary with debug symbols
+Initial Recon We are facing a ELF x86_64 binary with debug symbols.
 main: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=246eec7fd33acbeba185edfe290af7cb632dec84, for GNU/Linux 3.2.0, with debug_info, not stripped This binary was obviously written in golang, this might add some spice to the challenge.
 The binary is asking for the pow solution, I don&amp;rsquo;t have time to solve a PoW each time, so I just patched the condition.</description>
       
@@ -59,7 +59,7 @@ int main(int argc,char **argv) { uint8_t buffer [80]; long local_18; int local_c
       <guid>https://p2lu.github.io/posts/chausette-wu/writeup/</guid>
       
       <description>Chaussette To improve my skills in mastering the symbolic execution framework, I tried to solve this challenge with as many means as possible.
-I skipped the first reversing part which is not the interest here
+I skipped the first reversing part which is not the interest here.
 Introduction about the challenge The goal of the challenge is to solve a lot of &amp;ldquo;puzzle&amp;rdquo;, which consist of a entry of arguments (RDI and RSI (System V ABI x86_64 calling convention)).
 The goal is to find input when RAX==0 at the end of the shellcode.</description>
       
@@ -75,10 +75,10 @@ The goal is to find input when RAX==0 at the end of the shellcode.</description>
       <description>Sideways Sideways was a medium challenge from the DUCTF 2023.
 I managed to solve it using the miasm framework
 Initial recon We are facing a rust compiled binary, the binary is asking for an argument, our flag.
-Lets take a look at the check method
+Lets take a look at the check method.
 The flag must have a lenght of 26 (0x1a)
 Then, each character of the flag is computed like this schema, in &amp;ldquo;sideways&amp;rdquo;
-the product is then send to a absolutely chaotic set of manipulation</description>
+the product is then send to a absolutely chaotic set of manipulation.</description>
       
     </item>
     
@@ -106,8 +106,8 @@ Le bouton play sound nous joue une note, le jeu consistera à trouver parfaiteme
       
       <description>Nanobits Premièrement le fichier donné est au format PE, il faudra donc un environnement Windows pour espérer le lancer.
 On utilise Ghidra pour découvrir le binaire, le début est très difficilement compréhensible et on a du mal à se repérer.
-Il n&amp;rsquo;y a aucune chaine de caractère définie en statique dans le programme, le titre nous avait prévenu, on est sur une protection par nanomites
-Usuellement on trouve les nanomites sur des binaires ELF avec des traces comme le syscall PTRACE, qui permet de gérer de manière extérieure le sous-programme</description>
+Il n&amp;rsquo;y a aucune chaine de caractère définie en statique dans le programme, le titre nous avait prévenu, on est sur une protection par nanomites.
+Usuellement on trouve les nanomites sur des binaires ELF avec des traces comme le syscall PTRACE, qui permet de gérer de manière extérieure le sous-programme.</description>
       
     </item>
     

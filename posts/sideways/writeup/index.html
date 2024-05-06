@@ -197,16 +197,16 @@ stroke-linejoin="round" class="feather feather-home">
 <p>I managed to solve it using the miasm framework</p>
 <h2 id="initial-recon">Initial recon</h2>
 <p>We are facing a rust compiled binary, the binary is asking for an argument, our flag.</p>
-<p>Lets take a look at the check method</p>
+<p>Lets take a look at the check method.</p>
 <p><img alt="ghidra-1" src="/posts/sideways/image.png"></p>
 <p>The flag must have a lenght of 26 (0x1a)</p>
 <p>Then, each character of the flag is computed like this schema, in &ldquo;sideways&rdquo;</p>
 <p><img alt="alt text" src="/posts/sideways/image-2.png"></p>
-<p>the product is then send to a absolutely chaotic set of manipulation</p>
+<p>the product is then send to a absolutely chaotic set of manipulation.</p>
 <p><img alt="ghidra-2" src="/posts/sideways/image-1.png"></p>
 <h2 id="emulation-and-flag">Emulation and flag</h2>
 <p>The transformation by this inline function is then compared to an array of the flag size lenght / 2.</p>
-<p>To prepare the emulation with miasm i&rsquo;m copying a section of the stack (the flag is located in the stack) from the same location of the emulation start address (<code>0x55555555c973</code>)</p>
+<p>To prepare the emulation with miasm i&rsquo;m copying a section of the stack (the flag is located in the stack) from the same location of the emulation start address (<code>0x55555555c973</code>).</p>
 <p><code>dump binary memory stack.bin $rsp 0x1500</code></p>
 <p><em>This writeup is from September 2023 so some parts of the implementation are hit or miss but this is working well</em></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">miasm.analysis.binary</span> <span class="kn">import</span> <span class="n">Container</span>
