@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Prince 2 lu&#39;s blog</title>
-    <link>//localhost:1313/tags/</link>
+    <link>https://p2lu.github.io/tags/</link>
     <description>Recent content in Tags on Prince 2 lu&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 28 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://p2lu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Algo</title>
-      <link>//localhost:1313/tags/algo/</link>
+      <link>https://p2lu.github.io/tags/algo/</link>
       <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/tags/algo/</guid>
+      <guid>https://p2lu.github.io/tags/algo/</guid>
       
       <description></description>
       
@@ -20,10 +20,10 @@
     
     <item>
       <title>Miasm</title>
-      <link>//localhost:1313/tags/miasm/</link>
+      <link>https://p2lu.github.io/tags/miasm/</link>
       <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/tags/miasm/</guid>
+      <guid>https://p2lu.github.io/tags/miasm/</guid>
       
       <description></description>
       
@@ -31,10 +31,10 @@
     
     <item>
       <title>DSE</title>
-      <link>//localhost:1313/tags/dse/</link>
+      <link>https://p2lu.github.io/tags/dse/</link>
       <pubDate>Wed, 20 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/tags/dse/</guid>
+      <guid>https://p2lu.github.io/tags/dse/</guid>
       
       <description></description>
       
@@ -42,10 +42,10 @@
     
     <item>
       <title>Triton</title>
-      <link>//localhost:1313/tags/triton/</link>
+      <link>https://p2lu.github.io/tags/triton/</link>
       <pubDate>Wed, 20 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/tags/triton/</guid>
+      <guid>https://p2lu.github.io/tags/triton/</guid>
       
       <description></description>
       
@@ -53,10 +53,10 @@
     
     <item>
       <title>Mobile</title>
-      <link>//localhost:1313/tags/mobile/</link>
+      <link>https://p2lu.github.io/tags/mobile/</link>
       <pubDate>Sat, 05 Aug 2023 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/tags/mobile/</guid>
+      <guid>https://p2lu.github.io/tags/mobile/</guid>
       
       <description></description>
       
@@ -64,10 +64,10 @@
     
     <item>
       <title>Windows</title>
-      <link>//localhost:1313/tags/windows/</link>
+      <link>https://p2lu.github.io/tags/windows/</link>
       <pubDate>Fri, 05 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/tags/windows/</guid>
+      <guid>https://p2lu.github.io/tags/windows/</guid>
       
       <description></description>
       

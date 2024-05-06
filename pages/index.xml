@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on Prince 2 lu&#39;s blog</title>
-    <link>//localhost:1313/pages/</link>
+    <link>https://p2lu.github.io/pages/</link>
     <description>Recent content in Pages on Prince 2 lu&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language><atom:link href="//localhost:1313/pages/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-gb</language><atom:link href="https://p2lu.github.io/pages/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>//localhost:1313/pages/about/</link>
+      <link>https://p2lu.github.io/pages/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/pages/about/</guid>
+      <guid>https://p2lu.github.io/pages/about/</guid>
       
-      <description>Student at Ecole 2600, Apprentice at the Oppida lab in reverse engineering.
-You can find here some writeup about nice challenge that I have been able to do over time during ctf. Majoritary about reverse engineering challenges
+      <description>I&amp;rsquo;m a student at Ecole 2600 and apprentice at Oppida lab as a reverse engineer.
+Here you&amp;rsquo;ll be able to find some write-ups about interesting challenges that I&amp;rsquo;ve solved during CTFs (mostly reverse-engineering challenges).
 Feel free to contact me
-Formally at p2lu@proton.me Also in discord prince2lu (Social media also linked) Note: some writeups are relatively old and maybe imprecise</description>
+Formally at p2lu@proton.me Also in discord prince2lu Note: some writeups are relatively old and maybe imprecise</description>
       
     </item>
     

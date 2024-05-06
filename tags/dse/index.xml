@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DSE on Prince 2 lu&#39;s blog</title>
-    <link>//localhost:1313/tags/dse/</link>
+    <link>https://p2lu.github.io/tags/dse/</link>
     <description>Recent content in DSE on Prince 2 lu&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 20 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/tags/dse/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://p2lu.github.io/tags/dse/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>🇬🇧 FCSC | Chaussette ⭐⭐</title>
-      <link>//localhost:1313/posts/chausette-wu/writeup/</link>
+      <link>https://p2lu.github.io/posts/chausette-wu/writeup/</link>
       <pubDate>Wed, 20 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/posts/chausette-wu/writeup/</guid>
+      <guid>https://p2lu.github.io/posts/chausette-wu/writeup/</guid>
       
       <description>Chaussette To improve my skills in mastering the symbolic execution framework, I tried to solve this challenge with as many means as possible.
 I skipped the first reversing part which is not the interest here

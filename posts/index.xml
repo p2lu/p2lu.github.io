@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Prince 2 lu&#39;s blog</title>
-    <link>//localhost:1313/posts/</link>
+    <link>https://p2lu.github.io/posts/</link>
     <description>Recent content in Posts on Prince 2 lu&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 28 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://p2lu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>🇫🇷 MIDNIGHT BACKSLASH Qualif | [Hard]</title>
-      <link>//localhost:1313/posts/deck_decoder/wu/</link>
+      <link>https://p2lu.github.io/posts/deck_decoder/wu/</link>
       <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/posts/deck_decoder/wu/</guid>
+      <guid>https://p2lu.github.io/posts/deck_decoder/wu/</guid>
       
       <description>Deck Decoder J&amp;rsquo;ai pu participer à la création de challenges lors de l&amp;rsquo;édition 2024 du Midnight Flag CTF.
 Voici le writeup &amp;ldquo;untended&amp;rdquo; du challenge.
@@ -24,10 +24,10 @@ On trouve arapidement un array de chaines d&amp;rsquo;octets qui semble subir pl
     
     <item>
       <title>🇬🇧 HTBA | Maze Of Power [Insane]</title>
-      <link>//localhost:1313/posts/mazeofpower-wu/writeup/</link>
+      <link>https://p2lu.github.io/posts/mazeofpower-wu/writeup/</link>
       <pubDate>Tue, 12 Mar 2024 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/posts/mazeofpower-wu/writeup/</guid>
+      <guid>https://p2lu.github.io/posts/mazeofpower-wu/writeup/</guid>
       
       <description>MazeOfPower This challenge was a insane reverse engineering challenge from the Hack The Box Apocalypse 2024 CTF
 Initial Recon We are facing a ELF x86_64 binary with debug symbols
@@ -38,10 +38,10 @@ The binary is asking for the pow solution, I don&amp;rsquo;t have time to solve 
     
     <item>
       <title>🇬🇧 FCSC | ShuffleMe ⭐⭐</title>
-      <link>//localhost:1313/posts/shuffleme-wu/writeup/</link>
+      <link>https://p2lu.github.io/posts/shuffleme-wu/writeup/</link>
       <pubDate>Sun, 07 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/posts/shuffleme-wu/writeup/</guid>
+      <guid>https://p2lu.github.io/posts/shuffleme-wu/writeup/</guid>
       
       <description>ShuffleMe ShuffleMe is a reverse challenge from the FCSC edition 2021 from Cryptanalyse.
 Recover the inputs to get the flag.
@@ -53,10 +53,10 @@ int main(int argc,char **argv) { uint8_t buffer [80]; long local_18; int local_c
     
     <item>
       <title>🇬🇧 FCSC | Chaussette ⭐⭐</title>
-      <link>//localhost:1313/posts/chausette-wu/writeup/</link>
+      <link>https://p2lu.github.io/posts/chausette-wu/writeup/</link>
       <pubDate>Wed, 20 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/posts/chausette-wu/writeup/</guid>
+      <guid>https://p2lu.github.io/posts/chausette-wu/writeup/</guid>
       
       <description>Chaussette To improve my skills in mastering the symbolic execution framework, I tried to solve this challenge with as many means as possible.
 I skipped the first reversing part which is not the interest here
@@ -67,10 +67,10 @@ The goal is to find input when RAX==0 at the end of the shellcode.</description>
     
     <item>
       <title>🇬🇧 DUCTF | Sideways</title>
-      <link>//localhost:1313/posts/sideways/writeup/</link>
+      <link>https://p2lu.github.io/posts/sideways/writeup/</link>
       <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/posts/sideways/writeup/</guid>
+      <guid>https://p2lu.github.io/posts/sideways/writeup/</guid>
       
       <description>Sideways Sideways was a medium challenge from the DUCTF 2023.
 I managed to solve it using the miasm framework
@@ -84,10 +84,10 @@ the product is then send to a absolutely chaotic set of manipulation</descriptio
     
     <item>
       <title>🇫🇷 ph0wn Musical Ear</title>
-      <link>//localhost:1313/posts/ph0wn_musical_ear/writeup/</link>
+      <link>https://p2lu.github.io/posts/ph0wn_musical_ear/writeup/</link>
       <pubDate>Sat, 05 Aug 2023 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/posts/ph0wn_musical_ear/writeup/</guid>
+      <guid>https://p2lu.github.io/posts/ph0wn_musical_ear/writeup/</guid>
       
       <description>ph0wn Musical Ear Ce challenge etait proposé à l&amp;rsquo;édition 2021 du ph0wn, je n&amp;rsquo;ai pas participé à cette édition mais ait réalisé le challenge plusieurs mois après.
 Le writeup officiel est disponnible ici
@@ -99,10 +99,10 @@ Le bouton play sound nous joue une note, le jeu consistera à trouver parfaiteme
     
     <item>
       <title>🇫🇷 PWNME 2023 | Nanobits [Insane]</title>
-      <link>//localhost:1313/posts/pwnme_nanobits/writeup/</link>
+      <link>https://p2lu.github.io/posts/pwnme_nanobits/writeup/</link>
       <pubDate>Fri, 05 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/posts/pwnme_nanobits/writeup/</guid>
+      <guid>https://p2lu.github.io/posts/pwnme_nanobits/writeup/</guid>
       
       <description>Nanobits Premièrement le fichier donné est au format PE, il faudra donc un environnement Windows pour espérer le lancer.
 On utilise Ghidra pour découvrir le binaire, le début est très difficilement compréhensible et on a du mal à se repérer.

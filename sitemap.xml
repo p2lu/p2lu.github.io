@@ -2,58 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/posts/deck_decoder/wu/</loc>
+    <loc>https://p2lu.github.io/posts/deck_decoder/wu/</loc>
     <lastmod>2024-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/algo/</loc>
+    <loc>https://p2lu.github.io/tags/algo/</loc>
     <lastmod>2024-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/</loc>
+    <loc>https://p2lu.github.io/</loc>
     <lastmod>2024-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/miasm/</loc>
+    <loc>https://p2lu.github.io/tags/miasm/</loc>
     <lastmod>2024-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/</loc>
+    <loc>https://p2lu.github.io/posts/</loc>
     <lastmod>2024-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/</loc>
+    <loc>https://p2lu.github.io/tags/</loc>
     <lastmod>2024-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/mazeofpower-wu/writeup/</loc>
+    <loc>https://p2lu.github.io/posts/mazeofpower-wu/writeup/</loc>
     <lastmod>2024-03-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/shuffleme-wu/writeup/</loc>
+    <loc>https://p2lu.github.io/posts/shuffleme-wu/writeup/</loc>
     <lastmod>2024-01-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/chausette-wu/writeup/</loc>
+    <loc>https://p2lu.github.io/posts/chausette-wu/writeup/</loc>
     <lastmod>2023-12-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/dse/</loc>
+    <loc>https://p2lu.github.io/tags/dse/</loc>
     <lastmod>2023-12-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/triton/</loc>
+    <loc>https://p2lu.github.io/tags/triton/</loc>
     <lastmod>2023-12-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/sideways/writeup/</loc>
+    <loc>https://p2lu.github.io/posts/sideways/writeup/</loc>
     <lastmod>2023-09-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/ph0wn_musical_ear/writeup/</loc>
+    <loc>https://p2lu.github.io/posts/ph0wn_musical_ear/writeup/</loc>
     <lastmod>2023-08-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/mobile/</loc>
+    <loc>https://p2lu.github.io/tags/mobile/</loc>
     <lastmod>2023-08-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/pwnme_nanobits/writeup/</loc>
+    <loc>https://p2lu.github.io/posts/pwnme_nanobits/writeup/</loc>
     <lastmod>2023-05-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/windows/</loc>
+    <loc>https://p2lu.github.io/tags/windows/</loc>
     <lastmod>2023-05-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/pages/about/</loc>
+    <loc>https://p2lu.github.io/pages/about/</loc>
   </url><url>
-    <loc>//localhost:1313/categories/</loc>
+    <loc>https://p2lu.github.io/categories/</loc>
   </url><url>
-    <loc>//localhost:1313/pages/</loc>
+    <loc>https://p2lu.github.io/pages/</loc>
   </url>
 </urlset>
