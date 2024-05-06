@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Prince 2 lu&#39;s blog</title>
+    <link>/pages/</link>
+    <description>Recent content in Pages on Prince 2 lu&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language><atom:link href="/pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>/pages/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/pages/about/</guid>
+      
+      <description>Student at Ecole 2600, Apprentice at the Oppida lab in reverse engineering.
+You can find here some writeup about nice challenge that I have been able to do over time during ctf. Majoritary about reverse engineering challenges
+Feel free to contact me
+Formally at p2lu@proton.me Also in discord prince2lu (Social media also linked) Note: some writeups are relatively old and maybe imprecise</description>
+      
+    </item>
+    
+  </channel>
+</rss>

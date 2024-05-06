@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on Prince 2 lu&#39;s blog</title>
+    <link>/tags/windows/</link>
+    <description>Recent content in Windows on Prince 2 lu&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Fri, 05 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🇫🇷 PWNME 2023 | Nanobits [Insane]</title>
+      <link>/posts/pwnme_nanobits/writeup/</link>
+      <pubDate>Fri, 05 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/pwnme_nanobits/writeup/</guid>
+      
+      <description>Nanobits Premièrement le fichier donné est au format PE, il faudra donc un environnement Windows pour espérer le lancer.
+On utilise Ghidra pour découvrir le binaire, le début est très difficilement compréhensible et on a du mal à se repérer.
+Il n&amp;rsquo;y a aucune chaine de caractère définie en statique dans le programme, le titre nous avait prévenu, on est sur une protection par nanomites
+Usuellement on trouve les nanomites sur des binaires ELF avec des traces comme le syscall PTRACE, qui permet de gérer de manière extérieure le sous-programme</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Prince 2 lu&#39;s blog</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on Prince 2 lu&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Sun, 28 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Algo</title>
+      <link>/tags/algo/</link>
+      <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/algo/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Miasm</title>
+      <link>/tags/miasm/</link>
+      <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/miasm/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>DSE</title>
+      <link>/tags/dse/</link>
+      <pubDate>Wed, 20 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/dse/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Triton</title>
+      <link>/tags/triton/</link>
+      <pubDate>Wed, 20 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/triton/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Mobile</title>
+      <link>/tags/mobile/</link>
+      <pubDate>Sat, 05 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/mobile/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>/tags/windows/</link>
+      <pubDate>Fri, 05 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/windows/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Emoji</title>
+      <link>/tags/emoji/</link>
+      <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/emoji/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Prince 2 lu&#39;s blog</title>
+    <link>/</link>
+    <description>Recent content in Home on Prince 2 lu&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Sun, 28 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🇫🇷 MIDNIGHT BACKSLASH Qualif | [Hard]</title>
+      <link>/posts/deck_decoder/wu/</link>
+      <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/deck_decoder/wu/</guid>
+      
+      <description>Deck Decoder J&amp;rsquo;ai pu participer à la création de challenges lors de l&amp;rsquo;édition 2024 du Midnight Flag CTF.
+Voici le writeup &amp;ldquo;untended&amp;rdquo; du challenge.
+Initialisation Ce challenge est un binaire ELF x86_64 strippé. Toutes les addresses mentionnées dans ce WU seront à partir de la base: 0x100000
+On retrouve l&amp;rsquo;utilisation de srand dans le main qui utilise en 1er argument l&amp;rsquo;argument pin de notre programme.
+On trouve arapidement un array de chaines d&amp;rsquo;octets qui semble subir plusieurs transformations, notement la fonction 0x10e5ef, appelons la randomize</description>
+      
+    </item>
+    
+    <item>
+      <title>🇬🇧 HTBA | Maze Of Power [Insane]</title>
+      <link>/posts/mazeofpower-wu/writeup/</link>
+      <pubDate>Tue, 12 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/mazeofpower-wu/writeup/</guid>
+      
+      <description>MazeOfPower This challenge was a insane reverse engineering challenge from the Hack The Box Apocalypse 2024 CTF
+Initial Recon We are facing a ELF x86_64 binary with debug symbols
+main: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=246eec7fd33acbeba185edfe290af7cb632dec84, for GNU/Linux 3.2.0, with debug_info, not stripped This binary was obviously written in golang, this might add some spice to the challenge.
+The binary is asking for the pow solution, I don&amp;rsquo;t have time to solve a PoW each time, so I just patched the condition.</description>
+      
+    </item>
+    
+    <item>
+      <title>🇬🇧 FCSC | ShuffleMe ⭐⭐</title>
+      <link>/posts/shuffleme-wu/writeup/</link>
+      <pubDate>Sun, 07 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/shuffleme-wu/writeup/</guid>
+      
+      <description>ShuffleMe ShuffleMe is a reverse challenge from the FCSC edition 2021 from Cryptanalyse.
+Recover the inputs to get the flag.
+shuffleMe - 22.02 KiB
+Initial recon We are facing a stripped ELF 64-bit executable, the binary is asking for an secret from the argv[1], then a input from stdin.
+int main(int argc,char **argv) { uint8_t buffer [80]; long local_18; int local_c; if (argc != 2) { fprintf(stderr,&amp;#34;Usage: %s &amp;lt;secret&amp;gt;\n&amp;#34;,argv[1]); exit(1); } local_c = atoi(argv[1]); memset(buffer,0,80); __isoc99_scanf(&amp;#34;%70s&amp;#34;,buffer); local_18 = FUN_401230(buffer,local_c); if (local_18 == 0x460000) { puts(&amp;#34;Yay!</description>
+      
+    </item>
+    
+    <item>
+      <title>🇬🇧 FCSC | Chaussette ⭐⭐</title>
+      <link>/posts/chausette-wu/writeup/</link>
+      <pubDate>Wed, 20 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/chausette-wu/writeup/</guid>
+      
+      <description>Chaussette To improve my skills in mastering the symbolic execution framework, I tried to solve this challenge with as many means as possible.
+I skipped the first reversing part which is not the interest here
+Introduction about the challenge The goal of the challenge is to solve a lot of &amp;ldquo;puzzle&amp;rdquo;, which consist of a entry of arguments (RDI and RSI (System V ABI x86_64 calling convention)).
+The goal is to find input when RAX==0 at the end of the shellcode.</description>
+      
+    </item>
+    
+    <item>
+      <title>🇬🇧 DUCTF | Sideways</title>
+      <link>/posts/sideways/writeup/</link>
+      <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/sideways/writeup/</guid>
+      
+      <description>Sideways Sideways was a medium challenge from the DUCTF 2023.
+I managed to solve it using the miasm framework
+Initial recon We are facing a rust compiled binary, the binary is asking for an argument, our flag.
+Lets take a look at the check method
+The flag must have a lenght of 26 (0x1a)
+Then, each character of the flag is computed like this schema, in &amp;ldquo;sideways&amp;rdquo;
+the product is then send to a absolutely chaotic set of manipulation</description>
+      
+    </item>
+    
+    <item>
+      <title>🇫🇷 ph0wn Musical Ear</title>
+      <link>/posts/ph0wn_musical_ear/writeup/</link>
+      <pubDate>Sat, 05 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/ph0wn_musical_ear/writeup/</guid>
+      
+      <description>ph0wn Musical Ear Ce challenge etait proposé à l&amp;rsquo;édition 2021 du ph0wn, je n&amp;rsquo;ai pas participé à cette édition mais ait réalisé le challenge plusieurs mois après.
+Le writeup officiel est disponnible ici
+1ere reconnaissance On est face à une application android (.apk). Pour émuler et avoir une idée de ce que le programme fait j&amp;rsquo;utilise genymotion.
+On atteri sur une jolie interface
+Le bouton play sound nous joue une note, le jeu consistera à trouver parfaitement la note parmis un panel de 12 possibilitées.</description>
+      
+    </item>
+    
+    <item>
+      <title>🇫🇷 PWNME 2023 | Nanobits [Insane]</title>
+      <link>/posts/pwnme_nanobits/writeup/</link>
+      <pubDate>Fri, 05 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/pwnme_nanobits/writeup/</guid>
+      
+      <description>Nanobits Premièrement le fichier donné est au format PE, il faudra donc un environnement Windows pour espérer le lancer.
+On utilise Ghidra pour découvrir le binaire, le début est très difficilement compréhensible et on a du mal à se repérer.
+Il n&amp;rsquo;y a aucune chaine de caractère définie en statique dans le programme, le titre nous avait prévenu, on est sur une protection par nanomites
+Usuellement on trouve les nanomites sur des binaires ELF avec des traces comme le syscall PTRACE, qui permet de gérer de manière extérieure le sous-programme</description>
+      
+    </item>
+    
+    <item>
+      <title>Table of content</title>
+      <link>/posts/table-of-content/</link>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/table-of-content/</guid>
+      
+      <description>Table of content This theme supports displaying table of content (ToC) in blog posts.
+Parameters You can manage a ToC with two parameters:
+global toc parameter; post toc parameter. The post toc parameter has higher priority than the global toc parameter.
+Enable table of content on all posts To enable ToC on all posts (globally) set parameter toc to true in hugo.toml.
+[params] toc = true To disable ToC globally, simply ignore the toc parameter or set it to false.</description>
+      
+    </item>
+    
+    <item>
+      <title>Math Typesetting - use Mathematical notation in blog posts</title>
+      <link>/posts/math-typesetting/</link>
+      <pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/math-typesetting/</guid>
+      
+      <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using
+&lt;a href=&#34;https://github.com/hugo-sid/hugo-blog-awesome/blob/main/layouts/partials/helpers/katex.html&#34;&gt;third party JavaScript libraries&lt;/a&gt;.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Markdown Syntax Guide</title>
+      <link>/posts/markdown-syntax/</link>
+      <pubDate>Sat, 11 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/markdown-syntax/</guid>
+      
+      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Rich Content</title>
+      <link>/posts/rich-content/</link>
+      <pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/rich-content/</guid>
+      
+      <description>&lt;p&gt;Hugo ships with several &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes&#34;&gt;Built-in Shortcodes&lt;/a&gt; for rich content, along with a &lt;a href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;&gt;Privacy Config&lt;/a&gt; and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Placeholder Text</title>
+      <link>/posts/placeholder-text/</link>
+      <pubDate>Tue, 07 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/placeholder-text/</guid>
+      
+      <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Emoji Support</title>
+      <link>/posts/emoji-support/</link>
+      <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/emoji-support/</guid>
+      
+      <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/pages/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/pages/about/</guid>
+      
+      <description>Student at Ecole 2600, Apprentice at the Oppida lab in reverse engineering.
+You can find here some writeup about nice challenge that I have been able to do over time during ctf. Majoritary about reverse engineering challenges
+Feel free to contact me
+Formally at p2lu@proton.me Also in discord prince2lu (Social media also linked) Note: some writeups are relatively old and maybe imprecise</description>
+      
+    </item>
+    
+  </channel>
+</rss>
