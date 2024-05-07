@@ -57,7 +57,7 @@
         },
         "datePublished": "2023-09-02",
         "description": "Sideways challenge from the DUCTF",
-        "wordCount":  409 ,
+        "wordCount":  402 ,
         "mainEntityOfPage": "True",
         "dateModified": "2023-09-02",
         "image": {
@@ -233,8 +233,7 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">True</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">sentinelle</span><span class="p">(</span><span class="n">jitter</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">mybytesflag</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">chr</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">flag</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">    <span class="n">jitter</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">set_mem</span><span class="p">(</span><span class="n">myjit</span><span class="o">.</span><span class="n">cpu</span><span class="o">.</span><span class="n">RSP</span><span class="o">+</span><span class="mh">0x857</span><span class="p">,</span> <span class="n">mybytesflag</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">jitter</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">set_mem</span><span class="p">(</span><span class="n">myjit</span><span class="o">.</span><span class="n">cpu</span><span class="o">.</span><span class="n">RSP</span><span class="o">+</span><span class="mh">0x857</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">flag</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">    <span class="n">add</span> <span class="o">=</span> <span class="n">myjit</span><span class="o">.</span><span class="n">cpu</span><span class="o">.</span><span class="n">RSP</span><span class="o">+</span><span class="mh">0x857</span>
 </span></span><span class="line"><span class="cl">    <span class="n">jitter</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">set_mem</span><span class="p">(</span><span class="n">myjit</span><span class="o">.</span><span class="n">cpu</span><span class="o">.</span><span class="n">RSP</span><span class="o">+</span><span class="mh">0xc8</span><span class="p">,</span> <span class="n">add</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;little&#39;</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">True</span>

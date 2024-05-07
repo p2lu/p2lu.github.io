@@ -57,7 +57,7 @@
         },
         "datePublished": "2023-12-20",
         "description": "Using symbexec to solve the chausette challenge from the FCSC 2023",
-        "wordCount":  1027 ,
+        "wordCount":  1028 ,
         "mainEntityOfPage": "True",
         "dateModified": "2023-12-20",
         "image": {
@@ -265,7 +265,7 @@ stroke-linejoin="round" class="feather feather-home">
 <img alt="ghidra1" src="/posts/chausette-wu/image-1.png"></p>
 <p>So this works well, but the challenge is harder than that, the shellcode becoming bigger and bigger takes z3 in a very thorny situation, my RAM cannot make it to the final level.</p>
 <h2 id="the-triton-framework">The Triton Framework</h2>
-<p><a href="https://github.com/JonathanSalwan/Triton">Triton</a> is a DSE Engine (Dynamic Symbolic Execution Engine). The work process of a DSE Engine and a &ldquo;SE&rdquo; Engine are different, when the Symolic execution engine is looking statically the code, the DSE is working by executing the instruction, not by reading the entire flow. This is very handy to minimise the <a href="https://en.wikipedia.org/wiki/Path_explosion">Path Explosion</a> in statically compiled binary, in some obfuscation situation and a lot more. In plain world, I can very easily what to symbolise because i&rsquo;m choosing what should i execute.</p>
+<p><a href="https://github.com/JonathanSalwan/Triton">Triton</a> is a DSE Engine (Dynamic Symbolic Execution Engine). The work process of a DSE Engine and a &ldquo;SE&rdquo; Engine are different, when the Symolic execution engine is looking statically the code, the DSE is working by executing the instruction, not by reading the entire flow. This is very handy to minimise the <a href="https://en.wikipedia.org/wiki/Path_explosion">Path Explosion</a> in statically compiled binary, in some obfuscation situation and a lot more. In plain world, I can very easily choose what to symbolise because i&rsquo;m choosing what should i execute.</p>
 <p>In this case, using a DSE or a SE is the same, <a href="https://twitter.com/RobinDavid1/status/1484952905283166215?lang=en"><strong>BUT</strong></a> triton involves an another SMT solver, with better performances. <a href="https://bitwuzla.github.io/">BitWuzla</a></p>
 <p>It&rsquo;s possible to just send the previous miasm expression to bitwuzla, but it&rsquo;s time to learn how to use Triton.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">triton</span> <span class="kn">import</span> <span class="o">*</span>
