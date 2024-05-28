@@ -218,7 +218,7 @@ stroke-linejoin="round" class="feather feather-home">
 <p>For each move ( <code>k/j/h/l</code> ) <code>[RSP + 0x21a]</code> is checked, if zero the maze is not solved, else the maze is solved and the binary is now printing the right path.</p>
 <p>So, I just patched the <code>JZ</code> instruction into a <code>JNZ</code> instruction, now for each move, I will have the solution of the maze.</p>
 <p><img alt="maze_solution" src="/posts/mazeofpower-wu/mop-wu-image-1.png"></p>
-<p>I didnt figured any backdoor in this challenge, but now, remeber the seed from our PoW solution above ? By using the same input locally and remotely, I will have the same maze, so the same solution.</p>
+<p>I didnt figured any backdoor in this challenge, but now, remember the seed from our PoW solution above ? By using the same input locally and remotely, I will have the same maze, so the same solution.</p>
 <p>The parsing of the maze into a concatenation of moves is a bit handy but nothing out of our mind.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pwn</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">subprocess</span>
