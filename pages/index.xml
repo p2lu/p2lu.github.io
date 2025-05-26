@@ -2,6 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on Prince 2 lu&#39;s blog</title>
+<<<<<<< HEAD
     <link>https://p2lu.github.io/pages/</link>
     <description>Recent content in Pages on Prince 2 lu&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -12,6 +13,18 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://p2lu.github.io/pages/about/</guid>
+=======
+    <link>http://localhost:1313/pages/</link>
+    <description>Recent content in Pages on Prince 2 lu&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language><atom:link href="http://localhost:1313/pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:1313/pages/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/pages/about/</guid>
+>>>>>>> 6fb69cfecda565325d8b4d2cb5cf055d9c5ca34c
       
       <description>I&amp;rsquo;m a 19yo student at Ecole 2600 and apprentice at Serma Safety &amp;amp; Security.
 Here you&amp;rsquo;ll be able to find some write-ups about interesting challenges that I&amp;rsquo;ve solved during CTFs (mostly reverse-engineering challenges).

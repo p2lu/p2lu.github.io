@@ -2,6 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Miasm on Prince 2 lu&#39;s blog</title>
+<<<<<<< HEAD
     <link>https://p2lu.github.io/tags/miasm/</link>
     <description>Recent content in Miasm on Prince 2 lu&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -13,6 +14,19 @@
       <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
       
       <guid>https://p2lu.github.io/posts/deck_decoder/wu/</guid>
+=======
+    <link>http://localhost:1313/tags/miasm/</link>
+    <description>Recent content in Miasm on Prince 2 lu&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Sun, 28 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/miasm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🇫🇷 MIDNIGHT BACKSLASH Qualif | [Hard]</title>
+      <link>http://localhost:1313/posts/deck_decoder/wu/</link>
+      <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/deck_decoder/wu/</guid>
+>>>>>>> 6fb69cfecda565325d8b4d2cb5cf055d9c5ca34c
       
       <description>Deck Decoder J&amp;rsquo;ai pu participer à la création de challenges lors de l&amp;rsquo;édition 2024 du Midnight Flag CTF.
 Voici le writeup &amp;ldquo;untended&amp;rdquo; du challenge.
@@ -24,10 +38,17 @@ On trouve arapidement un array de chaines d&amp;rsquo;octets qui semble subir pl
     
     <item>
       <title>🇬🇧 FCSC | Chaussette ⭐⭐</title>
+<<<<<<< HEAD
       <link>https://p2lu.github.io/posts/chausette-wu/writeup/</link>
       <pubDate>Wed, 20 Dec 2023 00:00:00 +0000</pubDate>
       
       <guid>https://p2lu.github.io/posts/chausette-wu/writeup/</guid>
+=======
+      <link>http://localhost:1313/posts/chausette-wu/writeup/</link>
+      <pubDate>Wed, 20 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/chausette-wu/writeup/</guid>
+>>>>>>> 6fb69cfecda565325d8b4d2cb5cf055d9c5ca34c
       
       <description>Chaussette To improve my skills in mastering the symbolic execution framework, I tried to solve this challenge with as many means as possible.
 I skipped the first reversing part which is not the interest here.
@@ -38,10 +59,17 @@ The goal is to find input when RAX==0 at the end of the shellcode.</description>
     
     <item>
       <title>🇬🇧 DUCTF | Sideways</title>
+<<<<<<< HEAD
       <link>https://p2lu.github.io/posts/sideways/writeup/</link>
       <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://p2lu.github.io/posts/sideways/writeup/</guid>
+=======
+      <link>http://localhost:1313/posts/sideways/writeup/</link>
+      <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/sideways/writeup/</guid>
+>>>>>>> 6fb69cfecda565325d8b4d2cb5cf055d9c5ca34c
       
       <description>Sideways Sideways was a medium challenge from the DUCTF 2023.
 I managed to solve it using the miasm framework
