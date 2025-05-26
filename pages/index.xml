@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Prince 2 lu&#39;s blog</title>
+    <link>https://p2lu.github.io/pages/</link>
+    <description>Recent content in Pages on Prince 2 lu&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language><atom:link href="https://p2lu.github.io/pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://p2lu.github.io/pages/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://p2lu.github.io/pages/about/</guid>
+      
+      <description>I&amp;rsquo;m a 19yo student at Ecole 2600 and apprentice at Serma Safety &amp;amp; Security.
+Here you&amp;rsquo;ll be able to find some write-ups about interesting challenges that I&amp;rsquo;ve solved during CTFs (mostly reverse-engineering challenges).
+Feel free to contact me
+Formally at p2lu@proton.me Also in discord prince2lu Note: some writeups are relatively old and maybe imprecise</description>
+      
+    </item>
+    
+  </channel>
+</rss>

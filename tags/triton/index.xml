@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Triton on Prince 2 lu&#39;s blog</title>
+    <link>https://p2lu.github.io/tags/triton/</link>
+    <description>Recent content in Triton on Prince 2 lu&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Wed, 20 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://p2lu.github.io/tags/triton/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🇬🇧 FCSC | Chaussette ⭐⭐</title>
+      <link>https://p2lu.github.io/posts/chausette-wu/writeup/</link>
+      <pubDate>Wed, 20 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://p2lu.github.io/posts/chausette-wu/writeup/</guid>
+      
+      <description>Chaussette To improve my skills in mastering the symbolic execution framework, I tried to solve this challenge with as many means as possible.
+I skipped the first reversing part which is not the interest here.
+Introduction about the challenge The goal of the challenge is to solve a lot of &amp;ldquo;puzzle&amp;rdquo;, which consist of a entry of arguments (RDI and RSI (System V ABI x86_64 calling convention)).
+The goal is to find input when RAX==0 at the end of the shellcode.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

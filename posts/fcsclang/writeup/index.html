@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en-gb"><head><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">🇫🇷 FCSC | FCSCLang ⭐⭐⭐ | Prince 2 lu&#39;s blog</title>
+<meta property="og:title" content="🇫🇷 FCSC | FCSCLang ⭐⭐⭐ | Prince 2 lu&#39;s blog" />
+<meta name="twitter:title" content="🇫🇷 FCSC | FCSCLang ⭐⭐⭐ | Prince 2 lu&#39;s blog" />
+<meta itemprop="name" content="🇫🇷 FCSC | FCSCLang ⭐⭐⭐ | Prince 2 lu&#39;s blog" />
+<meta name="application-name" content="🇫🇷 FCSC | FCSCLang ⭐⭐⭐ | Prince 2 lu&#39;s blog" />
+<meta property="og:site_name" content="Prince 2 lu&#39;s blog " />
+
+<meta name="description" content="FCSC 2025 fcsclang challenge writeup">
+<meta itemprop="description" content="FCSC 2025 fcsclang challenge writeup" />
+<meta property="og:description" content="FCSC 2025 fcsclang challenge writeup" />
+<meta name="twitter:description" content="FCSC 2025 fcsclang challenge writeup" />
+
+<meta property="og:locale" content="en-gb" />
+<meta name="language" content="en-gb" />
+
+  <link rel="alternate" hreflang="en-gb" href="https://p2lu.github.io/posts/fcsclang/writeup/" title="English" />
+
+
+
+  <meta itemprop="image" content="https://p2lu.github.io/" />
+  <meta property="og:image" content="https://p2lu.github.io/" />
+  <meta name="twitter:image" content="https://p2lu.github.io/" />
+  <meta name="twitter:image:src" content="https://p2lu.github.io/" />
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2025-04-27T00:00:00Z />
+    <meta property="article:published_time" content=2025-04-27T00:00:00Z />
+
+    
+    <meta property="og:article:author" content="Prince 2 lu" />
+    <meta property="article:author" content="Prince 2 lu" />
+    <meta name="author" content="Prince 2 lu" />
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "🇫🇷 FCSC | FCSCLang ⭐⭐⭐",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2025-04-27",
+        "description": "FCSC 2025 fcsclang challenge writeup",
+        "wordCount":  3207 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2025-04-27",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Prince 2 lu\u0027s blog"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.125.5">
+
+    
+
+    <link rel="canonical" href="https://p2lu.github.io/posts/fcsclang/writeup/">
+    <link href="/style.min.d43bc6c79baa87f006efb2b92be952faeedeb1a3ab626c1d6abda52eae049355.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="https://p2lu.github.io/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+  
+
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="https://p2lu.github.io/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/pages/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">🇫🇷 FCSC | FCSCLang ⭐⭐⭐</h1>
+                
+                
+                <div class="post-meta">
+                    <time datetime="2025-04-27T00:00:00&#43;00:00" itemprop="datePublished"> 27 Apr 2025 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#reverse-fcsclang-">Reverse: FCSCLang ⭐⭐⭐</a></li>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#setup-du-reverse-de-fcsclang">Setup du reverse de fcsclang</a></li>
+    <li><a href="#linterpreteur">L&rsquo;interpreteur</a></li>
+    <li><a href="#résoudre-le-problème">Résoudre le problème</a></li>
+    <li><a href="#de-last-au-python">De l&rsquo;AST au python</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <h2 id="reverse-fcsclang-">Reverse: FCSCLang ⭐⭐⭐</h2>
+<p><img alt="img6" src="/posts/fcsclang/image-6.png"></p>
+<h2 id="introduction">Introduction</h2>
+<p>On ouvre l&rsquo;archive et on découvre</p>
+<ul>
+<li><code>fcsclang</code> un binaire ELF 64-bit.</li>
+<li><code>libfcsclang.so</code> une librairie ELF 64 bit.</li>
+<li><code>program.fcsc</code> un grand fichier texte.</li>
+</ul>
+<p>Pour lancer correctement le binaire, il nous faut la version 0.22 de <code>libtree-sitter</code></p>
+<p>On remarque imédiatement que program.fcsc contient du texte complètement lisible, c&rsquo;est même la copie du <code>voyage au centre de la terre</code> de Jules Vernes, avec quelques legères modifications notement sur la ponctuation et les espaces.</p>
+<p><img alt="img0" src="/posts/fcsclang/image.png"></p>
+<p>Après une rapide recherche, on apprend que tree-sitter est un outil de parsing de language vers un AST, il permet aussi d&rsquo;interagir avec les nodes.</p>
+<p>NOTE: Pour le reste du write-up, la base address du binaire sera <code>0x555555554000</code></p>
+<h2 id="setup-du-reverse-de-fcsclang">Setup du reverse de fcsclang</h2>
+<p>Le programme va dans un 1er temps:</p>
+<ul>
+<li>Acceder au fichier qu&rsquo;on lui fournit en 1er argument.</li>
+<li>Va accéder à <code>libfcsclang.so</code> qui contient le language.</li>
+</ul>
+<p>Etant donné que le programme a visiblement été compilé en C sans essai de tromper / casser la décompilation on va pouvoir effectuer quelques étapes pour être à l&rsquo;aise.</p>
+<p>On va télécharger sur github la version <code>0.22</code> de tree-sitter, ensuite sur ghidra:</p>
+<p>File -&gt; Parse C source -&gt; Sources files to parse -&gt; Selectionner <code>tree-sitter-0.22.0/lib/api.h</code> et <code>tree-sitter-0.22.0/lib/src/tree.h</code></p>
+<p>On a donc l&rsquo;ensemble des structures utilisées par le binaire, notement TSTree et TSNode qui vont nous être très utiles pour la suite.</p>
+<p>Mais on peut faire encore mieux, avec <a href="https://github.com/cesena/ghidra2dwarf">ghidra2dwarf</a> on va exporter nos symboles pour générer un nouveau binaire <code>fcsclang_dbg</code>. (Il faut quand même faire un peu attention en utilisant ça, surtout la correlation symbole / pointeur).</p>
+<p>On a donc avec notre debugger préféré les symboles du binaire (si celui-ci supporte le format DWARF). On va pouvoir se concentrer uniquement sur le code de l&rsquo;interpreteur. (Je ré exporte les symboles au fur et a mesure de la comprehension du binaire pour avoir continuelement à jour les symboles.)</p>
+<p><img alt="img1" src="/posts/fcsclang/image-1.png"></p>
+<h2 id="linterpreteur">L&rsquo;interpreteur</h2>
+<p>Contrairement à ce qu&rsquo;on trouve en CTF la majorité du temps, ce n&rsquo;est pas une VM dans le sens ou le binaire va lire chaque octet avec des registres et une mémoire virtuelle. Puis interpréter les opcodes comme une architecture classique.
+C&rsquo;est un language interprété, exactement comme python.</p>
+<p>Plus précisément le language (en texte) va être converti en un AST (Abstract Syntaxt Tree). Qui va être intérpété.
+Chaque élément va être une &ldquo;node&rdquo; qui a un type, et qui va dans la majorité des cas contenir une autre node, jusqu&rsquo;à tomber sur une expression logique comme une opération ou une assignation.</p>
+<p><code>libfcsclang.so</code> n&rsquo;est pas vraiment la cible du programme à reverse, étant donné qu&rsquo;il contient une structure propre à libtree-sitter TsLanguage, qui contient surtout le lexer, qui est la partie du language chargée de comprendre la syntaxe du language et quoi en faire c&rsquo;est lui qui va créer des nodes à partir de notre texte.</p>
+<p>L&rsquo;interpreteur est récursif, c&rsquo;est à dire qu&rsquo;il va traiter la 1ere node, puis la même fonction à l&rsquo;interieur de la fonction sera appellée avec une autre node &ldquo;enfant&rdquo; de celle ci.</p>
+<p>Voici une version plus ou moins realiste de ce à quoi un AST ressemblerait pour une fonction donnée (syntaxe python):</p>
+<p><img alt="img2" src="/posts/fcsclang/image-2.png"></p>
+<p>A noter aussi que chaque node possède un contexte, qui corréspond à un tableau pour permettre de remonter des informations d&rsquo;une node, étant donné que chaque node est évaluée elle peut en conséquence remonter une valeur.</p>
+<h2 id="résoudre-le-problème">Résoudre le problème</h2>
+<p>Le 1er objectif a été de trouver une &ldquo;side channel&rdquo;, c&rsquo;est à dire dynamiquement trouver une comparaison entre mon entrée et quelque chose qui est ou qui pourrait être le flag. On pourrait donc &ldquo;leaker&rdquo; le flag sans vraiment s&rsquo;embêter à devoir faire tout le travail.</p>
+<p>On peut essayer plusieurs stratégies, se poser sur le handler d&rsquo;assignement d&rsquo;une valeur et regarder quelle valeur est assignée à quoi, ou alors regarder quelle valeur est comparée à quoi.</p>
+<p>Par exemple cette fonction ici represente le handler de toutes les operations possibles sur deux expressions</p>
+<p><img alt="img5" src="/posts/fcsclang/image-5.png"></p>
+<p>On a aussi un autre problème, tous les handlers de node ne sont pas documentés et je ne les ai pas encore analysés. On va devoir sauter ça pour notre essai de side channel.</p>
+<p>On va rapidement coder un petit script gdb franchement pas glorieux pour nous ajouter des nouvelles commandes custom</p>
+<blockquote>
+<p>ça fonctionne car souvenez vous mon binaire a des symboles de debug, sans ça il faudrait exprimer de manière explicite les appels et les types de retours.</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">gdb</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">DumpNode</span><span class="p">(</span><span class="n">gdb</span><span class="o">.</span><span class="n">Command</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s2">&#34;dump_node&#34;</span><span class="p">,</span> <span class="n">gdb</span><span class="o">.</span><span class="n">COMMAND_USER</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">invoke</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">,</span> <span class="n">from_tty</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">expr</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;*(TSNode*)(</span><span class="si">{</span><span class="n">arg</span><span class="si">}</span><span class="s2">)&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">_dump</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">_dump</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node_expr</span><span class="p">,</span> <span class="n">depth</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">indent</span> <span class="o">=</span> <span class="s2">&#34;  &#34;</span> <span class="o">*</span> <span class="n">depth</span>        
+</span></span><span class="line"><span class="cl">        <span class="n">typ</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">parse_and_eval</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;ts_node_type(</span><span class="si">{</span><span class="n">node_expr</span><span class="si">}</span><span class="s2">)&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">string</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="n">val</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>            
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">indent</span><span class="si">}</span><span class="s2">- </span><span class="si">{</span><span class="n">typ</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">val</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">cnt</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">gdb</span><span class="o">.</span><span class="n">parse_and_eval</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;ts_node_child_count(</span><span class="si">{</span><span class="n">node_expr</span><span class="si">}</span><span class="s2">)&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cnt</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">child_expr</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;ts_node_child(</span><span class="si">{</span><span class="n">node_expr</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">)&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">_dump</span><span class="p">(</span><span class="n">child_expr</span><span class="p">,</span> <span class="n">depth</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">DumpExpr</span><span class="p">(</span><span class="n">gdb</span><span class="o">.</span><span class="n">Command</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s2">&#34;dump_expr&#34;</span><span class="p">,</span> <span class="n">gdb</span><span class="o">.</span><span class="n">COMMAND_USER</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">invoke</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">,</span> <span class="n">from_tty</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">_dump</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">_dump</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">gdb</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;x/2xg FUN_555555557b97(*(uint64_t*)0x55555555b158,</span><span class="si">{</span><span class="n">arg</span><span class="si">}</span><span class="s2">)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl"><span class="n">DumpNode</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">DumpExpr</span><span class="p">()</span>
+</span></span></code></pre></div><p>On peut donc évaluer des expressions grâce à leur nom (mon entrée = 0xdeadbeef)
+<img alt="img3" src="/posts/fcsclang/image-3.png"></p>
+<p>On peut aussi afficher l&rsquo;arbe des enfants de la node à partir de l&rsquo;adresse de celle-ci</p>
+<p><img alt="img4" src="/posts/fcsclang/image-4.png"></p>
+<p>Malheureusement le challenge est bien fait. Mise à part quelques pistes (notement un tableau de 9x9 initialisé, possiblement un sudoku). J&rsquo;ai décidé d&rsquo;abandonner l&rsquo;idée de solve uniquement dynamiquement et de passer aux choses serieuses.</p>
+<h2 id="de-last-au-python">De l&rsquo;AST au python</h2>
+<p>Il y&rsquo;a une bonne moitié des types de nodes qui sont déjà nommées et ne demandent quasiment aucun travail de reverse, la stratégie va être de loader le language en python. Grâce à l&rsquo;api python <a href="https://github.com/tree-sitter/py-tree-sitter">py-tree-sitter</a> on va pouvoir charger notre language pour parser <code>program.fcsc</code> et ainsi travailler avec le même AST que <code>fcsclang</code>.</p>
+<p>J&rsquo;ai choisi la fonction <code>0.21.3</code> de py-tree-sitter pour pouvoir travailler avec des languages en version 14 sans pour autant avoir à subir le changement d&rsquo;api qui semble rendre le chargement de languages custom beaucoup plus complexe.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tree_sitter</span> <span class="kn">import</span> <span class="n">Language</span><span class="p">,</span> <span class="n">Parser</span>
+</span></span><span class="line"><span class="cl"><span class="n">l</span> <span class="o">=</span> <span class="n">Language</span><span class="p">(</span><span class="s2">&#34;libfcsclang.so&#34;</span><span class="p">,</span> <span class="s2">&#34;fcsclang&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">source_bytes</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;program.fcsc&#34;</span><span class="p">,</span> <span class="s2">&#34;rb&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">parser</span> <span class="o">=</span> <span class="n">Parser</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">parser</span><span class="o">.</span><span class="n">set_language</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">tree</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">source_bytes</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">root_node</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">root_node</span>
+</span></span></code></pre></div><p>Il va ensuite falloir identifier les types non documentés.</p>
+<p>On a alors</p>
+<p>les chiffres:</p>
+<pre tabindex="0"><code>undocumented_732293a7c7094ffd : 0
+undocumented_f9bfceb10223dcd6 : 1
+undocumented_d53cabc7357ff2a5 : 2
+undocumented_210eb81a94b8b633 : 3
+undocumented_c589a8f3aaff75f7 : 4
+undocumented_ac7469dafc6e9c77 : 5
+undocumented_8212463fe42cc213 : 6
+undocumented_791df7d09856e81f : 7
+undocumented_db9dce746e821769 : 8
+undocumented_ac3fcec30d0b6a40 : 9
+</code></pre><p>les expressions:</p>
+<pre tabindex="0"><code>undocumented_0fe135eb8cd073ef: print
+undocumented_af0dbc52101afc49: print
+undocumented_9bfdf82a969d10c2: input
+undocumented_48359b1cc713e5a1: if
+undocumented_c44ff70e0a035b84: while
+</code></pre><p>les operations / comparateurs:</p>
+<pre tabindex="0"><code>undocumented_46eb8e8b7b15c3d5:  + 
+undocumented_cfd09200be51d38f:  - 
+undocumented_b341f271c655aaee:  * 
+undocumented_956dd300d7424ff3:  ==
+undocumented_0162f13a50afff09:  !=
+undocumented_a91bdbbce9e82238:  &lt; 
+undocumented_589a700aed48e3a4:  &gt; 
+undocumented_2d5b46a88151170b:  &lt;=
+undocumented_4c3cc3b8907e3db5:  &gt;=
+undocumented_aa1bd5b44f53714d:  &amp;&amp;
+undocumented_0e772940f0fd3008:  ||
+undocumented_13932b8a4b1bd439:  &lt;&lt;
+undocumented_0cd2df8843187030:  &gt;&gt;
+undocumented_b858202486aecd0f:  | 
+undocumented_24e094c9759dc06c:  &amp; 
+</code></pre><p>Une fois qu&rsquo;on a tout, il faut construire un handler récursif, comme le handler du programme. On arrive avec le programme suivant:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tree_sitter</span> <span class="kn">import</span> <span class="n">Language</span><span class="p">,</span> <span class="n">Parser</span>
+</span></span><span class="line"><span class="cl"><span class="n">l</span> <span class="o">=</span> <span class="n">Language</span><span class="p">(</span><span class="s2">&#34;libfcsclang.so&#34;</span><span class="p">,</span> <span class="s2">&#34;fcsclang&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">source_bytes</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;program.fcsc&#34;</span><span class="p">,</span> <span class="s2">&#34;rb&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">known</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_732293a7c7094ffd&#34;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_f9bfceb10223dcd6&#34;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_d53cabc7357ff2a5&#34;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_210eb81a94b8b633&#34;</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_c589a8f3aaff75f7&#34;</span> <span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_ac7469dafc6e9c77&#34;</span> <span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_8212463fe42cc213&#34;</span> <span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_791df7d09856e81f&#34;</span> <span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_db9dce746e821769&#34;</span> <span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_ac3fcec30d0b6a40&#34;</span> <span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_46eb8e8b7b15c3d5&#34;</span><span class="p">:</span> <span class="s1">&#39; + &#39;</span> <span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_cfd09200be51d38f&#34;</span><span class="p">:</span> <span class="s1">&#39; - &#39;</span> <span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_b341f271c655aaee&#34;</span><span class="p">:</span> <span class="s1">&#39; * &#39;</span> <span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_956dd300d7424ff3&#34;</span><span class="p">:</span> <span class="s1">&#39; == &#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_0162f13a50afff09&#34;</span><span class="p">:</span> <span class="s2">&#34; != &#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_a91bdbbce9e82238&#34;</span><span class="p">:</span> <span class="s1">&#39; &lt; &#39;</span> <span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_589a700aed48e3a4&#34;</span><span class="p">:</span> <span class="s1">&#39; &gt; &#39;</span> <span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_2d5b46a88151170b&#34;</span><span class="p">:</span> <span class="s1">&#39; &lt;= &#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_4c3cc3b8907e3db5&#34;</span><span class="p">:</span> <span class="s1">&#39; &gt;= &#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_aa1bd5b44f53714d&#34;</span><span class="p">:</span> <span class="s1">&#39; &amp;&amp; &#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_0e772940f0fd3008&#34;</span><span class="p">:</span> <span class="s1">&#39; || &#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_13932b8a4b1bd439&#34;</span><span class="p">:</span> <span class="s1">&#39; &lt;&lt; &#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_0cd2df8843187030&#34;</span><span class="p">:</span> <span class="s1">&#39; &gt;&gt; &#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_b858202486aecd0f&#34;</span><span class="p">:</span> <span class="s1">&#39; | &#39;</span> <span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_24e094c9759dc06c&#34;</span><span class="p">:</span> <span class="s1">&#39; &amp; &#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">knowfunc</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_0fe135eb8cd073ef&#34;</span><span class="p">:</span> <span class="s2">&#34;print&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_af0dbc52101afc49&#34;</span><span class="p">:</span> <span class="s2">&#34;print&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_9bfdf82a969d10c2&#34;</span><span class="p">:</span> <span class="s2">&#34;input&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_48359b1cc713e5a1&#34;</span><span class="p">:</span> <span class="s2">&#34;if&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;undocumented_c44ff70e0a035b84&#34;</span><span class="p">:</span> <span class="s2">&#34;while&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_node_val</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">node</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_node_identifier</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">node</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;identifier&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">recurs_get_elm</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">elmlist</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">elm</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;element&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">elmlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elm</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">recurs_get_elm</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;next&#34;</span><span class="p">),</span> <span class="n">depth</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">elmlist</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">elmlist</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_elm_arr</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">liste</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;list&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">liste</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;error: no list&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">elmlist</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">recurs_get_elm</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">elmlist</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">recurs_get_param</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">arglist</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">node</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">arglist</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">param</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;param&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">arglist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">recurs_get_param</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;next&#34;</span><span class="p">),</span> <span class="n">depth</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">arglist</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">recurs_get_param_func</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">arglist</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">node</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">arglist</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">param</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;identifier&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">arglist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">recurs_get_param_func</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;next&#34;</span><span class="p">),</span> <span class="n">depth</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">arglist</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_parameters</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">param</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;parameters&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">param</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;error: no params...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">liste</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;list&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">liste</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;error: no list&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">arglist</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">recurs_get_param</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">arglist</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_parameters_func</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">liste</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;list&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">liste</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;error: no list&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">arglist</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">recurs_get_param_func</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">arglist</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">INDENT_PADDING</span> <span class="o">=</span> <span class="s2">&#34;</span><span class="se">\t</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">supported</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;function_call&#34;</span><span class="p">,</span> <span class="s2">&#34;function_definition&#34;</span><span class="p">,</span> <span class="s2">&#34;assign&#34;</span><span class="p">,</span> <span class="s2">&#34;array&#34;</span><span class="p">,</span> <span class="s2">&#34;binexp&#34;</span><span class="p">,</span> <span class="s2">&#34;subscript&#34;</span><span class="p">,</span><span class="s2">&#34;unexp&#34;</span><span class="p">,</span> <span class="s2">&#34;if&#34;</span><span class="p">,</span> <span class="s2">&#34;while&#34;</span><span class="p">,</span> <span class="s2">&#34;statement&#34;</span><span class="p">,</span> <span class="s2">&#34;str&#34;</span><span class="p">,</span> <span class="s2">&#34;print&#34;</span><span class="p">,</span> <span class="s2">&#34;input&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">print_node</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">type_</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">type</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cont</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">type_</span> <span class="ow">in</span> <span class="n">known</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">type_</span> <span class="o">=</span> <span class="n">known</span><span class="p">[</span><span class="n">type_</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">type_</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">type_</span> <span class="ow">in</span> <span class="n">knowfunc</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">type_</span> <span class="o">=</span> <span class="n">knowfunc</span><span class="p">[</span><span class="n">type_</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">indent</span> <span class="ow">and</span> <span class="n">type_</span> <span class="ow">in</span> <span class="n">supported</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">indent</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">type_</span> <span class="o">==</span> <span class="n">supported</span><span class="p">[</span><span class="mi">9</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">type_</span> <span class="o">==</span> <span class="n">supported</span><span class="p">[</span><span class="mi">10</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">get_node_val</span><span class="p">(</span><span class="n">node</span><span class="p">),</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">type_</span> <span class="o">==</span> <span class="n">supported</span><span class="p">[</span><span class="mi">11</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;print(&#34;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">print_node</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;param&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;)&#34;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">type_</span> <span class="o">==</span> <span class="n">supported</span><span class="p">[</span><span class="mi">12</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;input()&#34;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">type_</span> <span class="o">==</span> <span class="s2">&#34;identifier&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">get_node_val</span><span class="p">(</span><span class="n">node</span><span class="p">),</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">type_</span> <span class="o">==</span> <span class="n">supported</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">get_node_val</span><span class="p">(</span><span class="n">get_node_identifier</span><span class="p">(</span><span class="n">node</span><span class="p">)),</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;(&#34;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>        
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">get_parameters</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">print_node</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;, &#34;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;)&#34;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">type_</span> <span class="o">==</span> <span class="n">supported</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">def&#34;</span><span class="p">,</span> <span class="n">get_node_val</span><span class="p">(</span><span class="n">get_node_identifier</span><span class="p">(</span><span class="n">node</span><span class="p">)),</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;(&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s2">&#34;arguments&#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                <span class="c1"># print([get_parameters_func(child)])</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;, &#34;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">get_node_val</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">get_parameters_func</span><span class="p">(</span><span class="n">child</span><span class="p">)]),</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;):&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s2">&#34;scope&#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                <span class="n">print_node</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">indent</span> <span class="o">+</span> <span class="n">INDENT_PADDING</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">type_</span> <span class="o">==</span> <span class="n">supported</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">print_node</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;lvalue&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34; = &#34;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">print_node</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;value&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">type_</span> <span class="o">==</span> <span class="n">supported</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;[&#34;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">get_elm_arr</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">print_node</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;, &#34;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;]&#34;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">type_</span> <span class="o">==</span> <span class="n">supported</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">op</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;op&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">left</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;left&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">right</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;right&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">print_node</span><span class="p">(</span><span class="n">left</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">print_node</span><span class="p">(</span><span class="n">op</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">print_node</span><span class="p">(</span><span class="n">right</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">type_</span> <span class="o">==</span> <span class="n">supported</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">print_node</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;array&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;[&#34;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">print_node</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;index&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;]&#34;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">type_</span> <span class="o">==</span> <span class="n">supported</span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">argument</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;op&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;argument&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">print_node</span><span class="p">(</span><span class="n">argument</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34; == 0&#34;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">type_</span> <span class="o">==</span> <span class="n">supported</span><span class="p">[</span><span class="mi">7</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">expr</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;undocumented_f543173dbe320d3f&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">zero</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;undocumented_75dc81fb2f8d9ce3&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">notzero</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;undocumented_f1e6bfd0a35c19db&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;if((&#34;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">print_node</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;) == True):&#34;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">notzero</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">print_node</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">indent</span> <span class="o">+</span> <span class="n">INDENT_PADDING</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">zero</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;else:&#34;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">zero</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">print_node</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">indent</span> <span class="o">+</span> <span class="n">INDENT_PADDING</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">type_</span> <span class="o">==</span> <span class="n">supported</span><span class="p">[</span><span class="mi">8</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">expr</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;undocumented_f543173dbe320d3f&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">loop</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">child_by_field_name</span><span class="p">(</span><span class="s2">&#34;undocumented_a1a48da3b527af4e&#34;</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;while(&#34;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">print_node</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;):&#34;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">loop</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">print_node</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">indent</span> <span class="o">+</span> <span class="n">INDENT_PADDING</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>   
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">cont</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">print_node</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">indent</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">parcours_node</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">print_node</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">parser</span> <span class="o">=</span> <span class="n">Parser</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">parser</span><span class="o">.</span><span class="n">set_language</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">tree</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">source_bytes</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">root_node</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">root_node</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="n">root_node</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">parcours_node</span><span class="p">(</span><span class="n">root_node</span><span class="p">)</span>
+</span></span></code></pre></div><p>L&rsquo;affichage de chaque élément de la node a volontairement été formatté pour ressembler au python, j&rsquo;ai pas une bonne idée de la complexité du programme et je pourrais avoir à analyser un code vraiment complexe.</p>
+<p>Voici la sortie:</p>
+<pre tabindex="0"><code>consterner = [[0, 0, 0, 0, 0, 0, 0, 1, 8, ], [0, 0, 5, 6, 1, 0, 0, 2, 0, ], [3, 0, 0, 0, 0, 0, 5, 1, 0, ], [0, 0, 0, 0, 0, 0, 0, 0, 2, ], [1, 0, 0, 0, 3, 0, 0, 4, 4, ], [0, 0, 0, 0, 2, 1, 0, 0, 5, ], [0, 0, 0, 0, 4, 3, 0, 6, 1, ], [3, 1, 0, 1, 0, 6, 0, 0, 0, ], [0, 0, 4, 7, 0, 0, 0, 6, 7, ], ]
+routine = [[0, 0, 0, 0, 0, 0, 0, 0, 0, ], [0, 0, 0, 0, 0, 0, 0, 0, 0, ], [0, 0, 0, 0, 0, 0, 0, 0, 0, ], [0, 0, 0, 0, 0, 0, 0, 0, 0, ], [0, 0, 0, 0, 0, 0, 0, 0, 0, ], [0, 0, 0, 0, 0, 0, 0, 0, 0, ], [0, 0, 0, 0, 0, 0, 0, 0, 0, ], [0, 0, 0, 0, 0, 0, 0, 0, 0, ], [0, 0, 0, 0, 0, 0, 0, 0, 0, ], ]
+def inattendu(inoffensif):	
+	compulser = 0	
+	bienveillante = 0	
+	divin = 1	
+	while(compulser &lt; 9):		
+		ah = inoffensif[compulser]		
+		artifice = 1 &lt;&lt; ah		
+		divin = bienveillante &amp; artifice == 0 &amp;&amp; divin		
+		divin = ah &lt;= 9 &amp;&amp; ah &gt; 0 &amp;&amp; divin		
+		bienveillante = bienveillante | artifice		
+		compulser = compulser + 1	
+divin
+def bidonner(conduit):	
+	hameau = 0	
+	divin = 1	
+	while(hameau &lt; 9):		
+		divin = inattendu(conduit[hameau], ) &amp;&amp; divin		
+		hameau = hameau + 1	
+divin
+def mendiant(conduit, compulser):	
+	hameau = 0	
+	bienveillante = 0	
+	divin = 1	
+	while(hameau &lt; 9):		
+		ah = conduit[hameau][compulser]		
+		artifice = 1 &lt;&lt; ah		
+		divin = bienveillante &amp; artifice == 0 &amp;&amp; divin		
+		bienveillante = bienveillante | artifice		
+		hameau = hameau + 1	
+divin
+def symboles(conduit):	
+	compulser = 0	
+	divin = 1	
+	while(compulser &lt; 9):		
+		divin = mendiant(conduit, compulser, ) &amp;&amp; divin		
+		compulser = compulser + 1	
+divin
+def copie(culottes, japonais):	
+	divin = [0, 0, 0, 0, 0, 0, 0, 0, 0, ]	
+	embrasser = 0	
+	aiguille = 0	
+	while(embrasser &lt; 3):		
+		ventre = 0		
+		while(ventre &lt; 3):			
+			divin[aiguille] = [culottes * 3 + embrasser, japonais * 3 + ventre, ]			
+			ventre = ventre + 1			
+			aiguille = aiguille + 1		
+		embrasser = embrasser + 1	
+divin
+def aux(conduit, culottes, japonais):	
+	escroc = copie(culottes, japonais, )	
+	aiguille = 0	
+	bienveillante = 0	
+	divin = 1	
+	while(aiguille &lt; 9):		
+		hameau = escroc[aiguille][0]		
+		compulser = escroc[aiguille][1]		
+		ah = conduit[hameau][compulser]		
+		artifice = 1 &lt;&lt; ah		
+		divin = bienveillante &amp; artifice == 0 &amp;&amp; divin		
+		bienveillante = bienveillante | artifice		
+		aiguille = aiguille + 1	
+divin
+def discutable(conduit):	
+	hameau = 0	
+	divin = 1	
+	while(hameau &lt; 3):		
+		compulser = 0		
+		while(compulser &lt; 3):			
+			divin = aux(conduit, hameau, compulser, ) &amp;&amp; divin			
+			compulser = compulser + 1		
+		hameau = hameau + 1	
+divin
+def central(hameau, compulser, baffe):	
+	divin = [0, 0, 0, 0, ]	
+	divin[0] = [hameau + baffe, compulser, ]	
+	divin[1] = [hameau - baffe, compulser, ]	
+	divin[2] = [hameau, compulser + baffe, ]	
+	divin[3] = [hameau, compulser - baffe, ]	
+divin
+def gerber(conduit, hameau, compulser, baffe):	
+	divin = 0	
+	escroc = central(hameau, compulser, baffe, )	
+	aiguille = 0	
+	while(aiguille &lt; 4):		
+		cyclistes = escroc[aiguille][0]		
+		paisible = escroc[aiguille][1]		
+		if((cyclistes &lt; 9 &amp;&amp; paisible &lt; 9 &amp;&amp; cyclistes &gt;= 0 &amp;&amp; paisible &gt;= 0) == True):			
+			divin = conduit[cyclistes][paisible] == baffe || divin		
+		aiguille = aiguille + 1	
+divin
+def ferrailleur(conduit, poser):	
+	hameau = 0	
+	divin = 1	
+	while(hameau &lt; 9):		
+		compulser = 0		
+		while(compulser &lt; 9):			
+			baffe = poser[hameau][compulser]			
+			if((baffe != 0) == True):				
+				divin = gerber(conduit, hameau, compulser, baffe, ) &amp;&amp; divin			
+			compulser = compulser + 1		
+		hameau = hameau + 1	
+divin
+def lancinante(conduit, poser):	
+	divin = bidonner(conduit, )	
+	divin = symboles(conduit, ) &amp;&amp; divin	
+	divin = discutable(conduit, ) &amp;&amp; divin	
+	divin = ferrailleur(conduit, poser, ) &amp;&amp; divin	
+divin
+def pipe(conduit):	
+	hameau = 0	
+	while(hameau &lt; 9):		
+		compulser = 0		
+		while(compulser &lt; 9):			
+			ah = input()			
+			conduit[hameau][compulser] = ah			
+			compulser = compulser + 1		
+		hameau = hameau + 1
+def venture(conduit):	
+	hameau = 0	
+	while(hameau &lt; 9):		
+		compulser = 0		
+		while(compulser &lt; 9):			
+			print(conduit[hameau][compulser])			
+			print(&#34; &#34;)			
+			compulser = compulser + 1		
+		print(&#34;&#34;)		
+		hameau = hameau + 1
+def dictature(conduit):	
+	print(&#34;FCSC{&#34;)	
+	hameau = 0	
+	while(hameau &lt; 9):		
+		compulser = 0		
+		while(compulser &lt; 9):			
+			print(conduit[hameau][compulser])			
+			compulser = compulser + 1		
+		hameau = hameau + 1	
+	print(&#34;}&#34;)
+pipe(routine, )
+if((lancinante(routine, consterner, )) == True):	
+	dictature(routine, )	
+else:	
+	print(&#34;No&#34;)	
+</code></pre><p>On le remarque imédiatement, il s&rsquo;agit bien d&rsquo;un sudoku, mais un sudoku <strong>custom</strong>.</p>
+<p>On a:</p>
+<ul>
+<li>pipe(routine) : lit 81 entrées utilisateur et les stocke dans routine[0..8][0..8].</li>
+<li>Lignes (bidonner → inattendu) : pour chaque ligne, il vérifie unicité de 1 à 9 sans répétition ni hors‑plage.</li>
+<li>Colonnes (symboles → mendiant) : même check appliqué aux colonnes.</li>
+<li>Vérification &ldquo;masque&rdquo; (ferrailleur + gerber), gerber calcule les 4 voisins à coté de chaque élément.</li>
+<li>Si toutes les verifications passent, lancinante est vrai et on nous affiche le flag (le sudoku résolut).</li>
+<li>Si échec alors on nous affiche &ldquo;No&rdquo;.</li>
+</ul>
+<p>ça tombe bien, avec le teaser de cette année, j&rsquo;ai un script z3 tout fait pour travailler avec des sudokus. Mais pour un 9x9 j&rsquo;ai préféré adapter un script que j&rsquo;ai trouvé sur github.</p>
+<p>J&rsquo;ai récupéré la valeur de &ldquo;escroc&rdquo; en la recalculant en python pour faciliter le travail avec z3</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">copie</span><span class="p">(</span><span class="n">culottes</span><span class="p">,</span> <span class="n">japonais</span><span class="p">):</span>    
+</span></span><span class="line"><span class="cl">    <span class="n">divin</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">]</span>    
+</span></span><span class="line"><span class="cl">    <span class="n">embrasser</span> <span class="o">=</span> <span class="mi">0</span>    
+</span></span><span class="line"><span class="cl">    <span class="n">aiguille</span> <span class="o">=</span> <span class="mi">0</span>    
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="n">embrasser</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ventre</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span><span class="p">(</span><span class="n">ventre</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">divin</span><span class="p">[</span><span class="n">aiguille</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">culottes</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">embrasser</span><span class="p">,</span> <span class="n">japonais</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">ventre</span><span class="p">,</span> <span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ventre</span> <span class="o">=</span> <span class="n">ventre</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="n">aiguille</span> <span class="o">=</span> <span class="n">aiguille</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="n">embrasser</span> <span class="o">=</span> <span class="n">embrasser</span> <span class="o">+</span> <span class="mi">1</span>    
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">divin</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">copie</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">z3</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sudoku_puzzle</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> 
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> 
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> 
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> 
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sudoku_grid</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Int</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;cell*</span><span class="si">{</span><span class="n">row</span><span class="si">}</span><span class="s2">\_</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">               <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="n">cell_constraints</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="n">And</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">cell</span><span class="p">,</span> <span class="n">cell</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">sudoku_grid</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">row_constraints</span> <span class="o">=</span> <span class="p">[</span><span class="n">Distinct</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">sudoku_grid</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">col_constraints</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Distinct</span><span class="p">([</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)])</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">subgrid_constraints</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Distinct</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sudoku_grid</span><span class="p">[</span><span class="mi">3</span> <span class="o">*</span> <span class="n">block_row</span> <span class="o">+</span> <span class="n">row</span><span class="p">][</span><span class="mi">3</span> <span class="o">*</span> <span class="n">block_col</span> <span class="o">+</span> <span class="n">col</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">block_row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">block_col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">all_constraints</span> <span class="o">=</span> <span class="n">cell_constraints</span> <span class="o">+</span> <span class="n">row_constraints</span> <span class="o">+</span> <span class="n">col_constraints</span> <span class="o">+</span> <span class="n">subgrid_constraints</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">solver</span> <span class="o">=</span> <span class="n">Solver</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">solver</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">all_constraints</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">escrocs</span> <span class="o">=</span> <span class="p">[[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">16</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">13</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">13</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">val</span> <span class="o">=</span> <span class="n">sudoku_puzzle</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">val</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">contenu</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">escrocs</span><span class="p">[</span><span class="n">idx</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">9</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mi">9</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">contenu</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="n">solver</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Or</span><span class="p">([</span><span class="n">elem</span> <span class="o">==</span> <span class="n">val</span> <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">contenu</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl">            <span class="n">idx</span><span class="o">+=</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">solver</span><span class="o">.</span><span class="n">check</span><span class="p">()</span> <span class="o">==</span> <span class="n">sat</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">model</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">model</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">solution</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">])</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">stri</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">elm</span> <span class="ow">in</span> <span class="n">solution</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">elm</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">stri</span><span class="o">+=</span><span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">elm</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">stri</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Skill issue ???&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Voici la sortie du script z3</p>
+<pre tabindex="0"><code>[8, 3, 6, 2, 1, 9, 7, 5, 4]
+[5, 4, 9, 7, 8, 6, 3, 1, 2]
+[1, 2, 7, 3, 4, 5, 9, 6, 8]
+[6, 5, 8, 1, 9, 3, 4, 2, 7]
+[3, 1, 4, 8, 2, 7, 6, 9, 5]
+[7, 9, 2, 5, 6, 4, 8, 3, 1]
+[9, 6, 5, 4, 7, 1, 2, 8, 3]
+[4, 8, 1, 6, 3, 2, 5, 7, 9]
+[2, 7, 3, 9, 5, 8, 1, 4, 6]
+836219754549786312127345968658193427314827695792564831965471283481632579273958146
+</code></pre><p>FLAG: <code>FCSC{836219754549786312127345968658193427314827695792564831965471283481632579273958146}</code></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Un challenge vraiment hors de l&rsquo;ordinaire que j&rsquo;ai totalement adoré. Je me demande encore comment c&rsquo;est possible d&rsquo;avoir fait un challenge aussi complet avec un résultat final aussi proche d&rsquo;un roman.</p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/p2lu" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://twitter.com/Prince2lu2" target="_blank" rel="noopener noreferrer me"
+    title="Twitter">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+    </path>
+</svg>
+</a>
+<a href="https://www.root-me.org/Prince2Lu" target="_blank" rel="noopener noreferrer me"
+    title="Root-Me">
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="234.000000pt" height="300.000000pt" viewBox="0 0 234.000000 300.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)"
+fill="#888a90" stroke="none">
+<path d="M968 2983 c-15 -9 -35 -32 -45 -50 -10 -18 -23 -33 -29 -33 -29 0
+-177 -56 -259 -98 -445 -229 -700 -729 -620 -1220 8 -51 28 -134 45 -184 26
+-82 27 -93 14 -112 -32 -46 -10 -139 40 -165 l26 -14 2 -246 3 -246 192 -135
+193 -135 0 -161 c0 -111 4 -164 12 -172 9 -9 163 -12 630 -12 600 0 618 1 628
+19 5 11 10 87 10 174 l0 154 195 137 195 137 0 241 0 241 35 38 c38 42 46 93
+24 142 -9 19 -5 41 19 113 121 361 56 760 -173 1065 -152 203 -371 356 -602
+421 -69 20 -82 27 -91 50 -11 31 -66 68 -100 68 -38 0 -92 -30 -107 -61 -33
+-63 -8 -147 51 -169 l24 -10 0 -224 c0 -145 4 -227 10 -231 6 -4 53 8 104 26
+l92 33 27 -20 c25 -18 26 -22 27 -120 l0 -101 -61 -67 c-75 -82 -250 -229
+-260 -219 -4 5 -35 74 -69 155 l-63 147 22 27 c25 31 26 55 6 93 -42 82 -171
+48 -168 -45 1 -40 24 -70 68 -88 26 -11 39 -33 98 -171 37 -86 67 -158 65
+-160 -9 -8 -187 -124 -215 -140 l-32 -19 -202 61 -203 61 -64 -24 c-56 -21
+-67 -22 -81 -10 -55 48 -151 4 -151 -70 0 -30 30 -71 59 -84 55 -22 113 10
+126 70 5 22 17 32 59 48 l54 20 170 -51 c94 -28 169 -54 166 -58 -8 -14 -335
+-170 -467 -223 -133 -54 -139 -55 -182 -44 -49 13 -56 26 -96 173 -18 66 -22
+109 -23 245 -1 91 2 177 7 193 l7 27 258 0 258 0 22 -29 c52 -70 162 -33 162
+54 0 37 -16 62 -51 81 -40 20 -84 10 -111 -27 l-22 -29 -253 0 c-139 0 -253 2
+-253 3 0 2 9 33 21 68 107 327 361 586 680 694 89 31 90 31 135 0 53 -36 103
+-34 148 6 58 51 58 125 1 179 -32 30 -101 37 -137 13z m97 -68 c30 -29 31 -49
+5 -75 -28 -28 -66 -26 -86 5 -20 31 -12 68 18 83 33 15 36 15 63 -13z m273 9
+c32 -22 27 -73 -9 -93 -24 -13 -29 -13 -53 2 -34 22 -36 69 -4 91 28 20 38 20
+66 0z m154 -128 c69 -20 170 -65 226 -100 39 -24 42 -30 42 -70 0 -97 -83
+-322 -150 -406 l-20 -25 0 65 c0 60 2 68 30 92 62 54 27 158 -53 158 -43 0
+-83 -31 -92 -69 -5 -25 -16 -33 -71 -55 -35 -14 -66 -26 -69 -26 -3 0 -5 90
+-5 200 0 199 0 201 23 209 12 5 31 18 41 30 11 12 25 20 30 18 6 -2 36 -12 68
+-21z m403 -230 c143 -117 283 -361 332 -579 39 -172 -52 -376 -254 -567 -164
+-155 -462 -335 -725 -439 l-78 -31 -97 20 c-165 34 -364 92 -513 149 l-55 21
+52 -48 52 -48 0 -66 c-2 -263 324 -355 463 -130 20 32 23 34 69 28 45 -6 54
+-12 161 -120 93 -94 121 -116 157 -126 57 -15 73 -9 288 112 116 65 169 101
+179 120 11 20 14 73 14 213 l0 187 103 101 c57 56 123 130 147 165 23 34 44
+62 46 62 7 0 -9 -67 -37 -156 l-29 -91 -38 -7 c-45 -7 -81 -41 -91 -88 -10
+-51 -3 -76 35 -113 l34 -34 0 -218 c0 -216 0 -218 -22 -232 -48 -29 -347 -243
+-357 -255 -6 -7 -12 -76 -13 -157 l-3 -144 -90 0 -90 0 -3 50 c-3 72 -10 93
+-32 105 -14 8 -26 8 -40 0 -17 -9 -20 -21 -20 -70 0 -92 2 -90 -111 -90 -117
+0 -120 3 -117 109 2 77 -10 101 -48 101 -33 0 -44 -33 -44 -131 l0 -80 -107 3
+-108 3 -3 66 c-2 51 -8 71 -22 84 -18 16 -21 16 -44 1 -22 -14 -25 -24 -28
+-83 l-3 -68 -90 0 -90 0 -3 147 -3 148 -72 53 c-39 29 -127 91 -194 137 l-122
+85 -1 222 0 221 30 30 c18 19 32 45 36 69 l6 39 121 48 c663 262 1159 641
+1341 1026 35 74 76 212 76 257 0 30 5 29 55 -11z m-1687 -1302 c24 -17 30 -62
+10 -82 -17 -17 -64 -15 -82 4 -23 22 -20 60 6 78 12 9 27 16 33 16 6 0 21 -7
+33 -16z m1978 8 c6 -4 16 -17 23 -29 31 -60 -64 -105 -101 -49 -29 43 35 107
+78 78z m-1285 -362 c39 -11 74 -21 76 -23 10 -11 -43 -58 -77 -68 -98 -30
+-200 41 -200 139 l0 31 64 -29 c36 -16 97 -39 137 -50z"/>
+<path d="M1140 598 c-52 -56 -101 -129 -98 -145 5 -26 50 -28 73 -3 24 27 84
+27 119 -1 14 -11 34 -19 44 -17 34 6 24 44 -30 109 -74 90 -76 91 -108 57z"/>
+<path d="M1010 2633 c-26 -9 -60 -46 -60 -63 0 -11 -16 -23 -42 -33 -24 -9
+-69 -26 -100 -37 l-57 -21 -3 -66 -3 -66 -68 1 c-62 0 -69 2 -96 31 -41 44
+-98 44 -135 0 -35 -41 -34 -83 3 -120 44 -43 114 -35 142 17 12 23 18 24 105
+24 l93 0 3 72 3 72 78 29 79 29 21 -20 c33 -31 71 -37 106 -16 48 29 62 74 37
+123 -21 39 -67 58 -106 44z"/>
+</g>
+</svg>
+</a>
+<a href="/index.xml" target="_blank" rel="noopener noreferrer me"
+    title="Rss">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2025 .
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+    
+    
+        
+    
+
+    
+    
+        
+    
+
+
+
+    
+    <script src="https://p2lu.github.io/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js" integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30&#43;lSNuSkl4QXuNyy8="></script>
+
+    
+
+</body>
+</html>

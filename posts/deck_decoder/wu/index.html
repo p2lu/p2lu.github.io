@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en-gb"><head><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">🇫🇷 MIDNIGHT BACKSLASH Qualif | [Hard] | Prince 2 lu&#39;s blog</title>
+<meta property="og:title" content="🇫🇷 MIDNIGHT BACKSLASH Qualif | [Hard] | Prince 2 lu&#39;s blog" />
+<meta name="twitter:title" content="🇫🇷 MIDNIGHT BACKSLASH Qualif | [Hard] | Prince 2 lu&#39;s blog" />
+<meta itemprop="name" content="🇫🇷 MIDNIGHT BACKSLASH Qualif | [Hard] | Prince 2 lu&#39;s blog" />
+<meta name="application-name" content="🇫🇷 MIDNIGHT BACKSLASH Qualif | [Hard] | Prince 2 lu&#39;s blog" />
+<meta property="og:site_name" content="Prince 2 lu&#39;s blog " />
+
+<meta name="description" content="Deck Decoder Midnight flag ctf writeup">
+<meta itemprop="description" content="Deck Decoder Midnight flag ctf writeup" />
+<meta property="og:description" content="Deck Decoder Midnight flag ctf writeup" />
+<meta name="twitter:description" content="Deck Decoder Midnight flag ctf writeup" />
+
+<meta property="og:locale" content="en-gb" />
+<meta name="language" content="en-gb" />
+
+  <link rel="alternate" hreflang="en-gb" href="https://p2lu.github.io/posts/deck_decoder/wu/" title="English" />
+
+
+
+  <meta itemprop="image" content="https://p2lu.github.io/" />
+  <meta property="og:image" content="https://p2lu.github.io/" />
+  <meta name="twitter:image" content="https://p2lu.github.io/" />
+  <meta name="twitter:image:src" content="https://p2lu.github.io/" />
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2024-04-28T00:00:00Z />
+    <meta property="article:published_time" content=2024-04-28T00:00:00Z />
+
+    
+    <meta property="og:article:author" content="Prince 2 lu" />
+    <meta property="article:author" content="Prince 2 lu" />
+    <meta name="author" content="Prince 2 lu" />
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "🇫🇷 MIDNIGHT BACKSLASH Qualif | [Hard]",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2024-04-28",
+        "description": "Deck Decoder Midnight flag ctf writeup",
+        "wordCount":  720 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2024-04-28",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Prince 2 lu\u0027s blog"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.125.5">
+
+    
+
+    <link rel="canonical" href="https://p2lu.github.io/posts/deck_decoder/wu/">
+    <link href="/style.min.d43bc6c79baa87f006efb2b92be952faeedeb1a3ab626c1d6abda52eae049355.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="https://p2lu.github.io/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+  
+
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="https://p2lu.github.io/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/pages/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">🇫🇷 MIDNIGHT BACKSLASH Qualif | [Hard]</h1>
+                
+                
+                <div class="post-meta">
+                    <time datetime="2024-04-28T00:00:00&#43;00:00" itemprop="datePublished"> 28 Apr 2024 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#initialisation">Initialisation</a></li>
+    <li><a href="#défaire-le-mélange">Défaire le mélange</a></li>
+    <li><a href="#résolution-du-crackme">Résolution du crackme</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <h1 id="deck-decoder">Deck Decoder</h1>
+<p>J&rsquo;ai pu participer à la création de challenges lors de l&rsquo;édition 2024 du Midnight Flag CTF.</p>
+<p>Voici le writeup &ldquo;untended&rdquo; du challenge.</p>
+<h2 id="initialisation">Initialisation</h2>
+<p>Ce challenge est un binaire ELF x86_64 strippé. Toutes les addresses mentionnées dans ce WU seront à partir de la base: <code>0x100000</code></p>
+<p>On retrouve l&rsquo;utilisation de <code>srand</code> dans le main qui utilise en 1er argument l&rsquo;argument <code>pin</code> de notre programme.</p>
+<p>On trouve arapidement un array de chaines d&rsquo;octets qui semble subir plusieurs transformations, notement la fonction <code>0x10e5ef</code>, appelons la <code>randomize</code>.</p>
+<p><img alt="alt text" src="/posts/deck_decoder/image.png"></p>
+<p>Cette fonction <code>randomize</code> sers à initialiser un tableau qui servira juste après au &ldquo;mélange&rdquo; des pointeurs de notre chaine d&rsquo;array.</p>
+<p><img alt="alt text" src="/posts/deck_decoder/image-1.png"></p>
+<h2 id="défaire-le-mélange">Défaire le mélange</h2>
+<p>Le 1er objectif sera de reproduire tous les schémas de mélange possibles (entre 0 et 2000). (<em>Félicitation à tous ceux qui ont identifié le nom de <a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">l&rsquo;algorithme de mélange</a></em>).</p>
+<p>On peut comparer dynamiquement la 1ere sortie de rand() dans notre programme avec 123 en argument et la sortie de ce script, si les deux sorties sont simillaires, on peut continuer.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">ctypes</span> <span class="kn">import</span> <span class="n">CDLL</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">libc</span> <span class="o">=</span> <span class="n">CDLL</span><span class="p">(</span><span class="s2">&#34;libc.so.6&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">libc</span><span class="o">.</span><span class="n">srand</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="n">libc</span><span class="o">.</span><span class="n">rand</span><span class="p">()))</span>
+</span></span></code></pre></div><p>Cependant attention le <code>srand</code> et le <code>rand</code> dépendent uniquement de la libc, il est nécéssaire de garder la même libc référencée dans le binaire.</p>
+<p>Maintenant il faut comprendre et reverse l&rsquo;algorithme de mélange de l&rsquo;array qui consiste uniquement a assigner un nouvel array la correspondance de notre tableau d&rsquo;entiers avec l&rsquo;indice de l&rsquo;élement</p>
+<p>Chaque element de l&rsquo;array est composé de la structure:</p>
+<ul>
+<li>1 octet qui correspond à la taille du buffer</li>
+<li>le buffer de la taille énnoncée</li>
+</ul>
+<p>L&rsquo;array est en plus chiffré en utilisant du RC4. Le RC4 a une propriété de &ldquo;roulement&rdquo;, c&rsquo;est à dire qu&rsquo;initialiser une clée puis chiffrer &ldquo;hello&rdquo; puis &ldquo;world&rdquo; donne un résultat différent que chiffrer &ldquo;world&rdquo; puis &ldquo;hello&rdquo;, l&rsquo;ordre initial de l&rsquo;array a donc une grande importance, le résultat sera correct uniquement si l&rsquo;array est dans le bon ordre.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">ctypes</span> <span class="kn">import</span> <span class="n">CDLL</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Crypto.Cipher.ARC4</span> <span class="kn">import</span> <span class="n">ARC4Cipher</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">capstone</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">math</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="sa">b</span><span class="s2">&#34;</span><span class="se">\x05\x6E\xF2\x67\xFE\x82</span><span class="s2">&#34;</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&#34;</span><span class="se">\x01\x2B</span><span class="s2">&#34;</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&#34;</span><span class="se">\x03\xED\x9C\x1B</span><span class="s2">&#34;</span><span class="p">]</span><span class="c1">#... big array</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">libc</span> <span class="o">=</span> <span class="n">CDLL</span><span class="p">(</span><span class="s2">&#34;libc.so.6&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="mh">0x8e7</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">calculate_entropy</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">frequency</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">probabilities</span> <span class="o">=</span> <span class="p">[</span><span class="n">freq</span> <span class="o">/</span> <span class="n">data_len</span> <span class="k">for</span> <span class="n">freq</span> <span class="ow">in</span> <span class="n">frequency</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">entropy</span> <span class="o">=</span> <span class="o">-</span><span class="nb">sum</span><span class="p">(</span><span class="n">prob</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">prob</span><span class="p">)</span> <span class="k">for</span> <span class="n">prob</span> <span class="ow">in</span> <span class="n">probabilities</span> <span class="k">if</span> <span class="n">prob</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">entropy</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">check_instructions</span><span class="p">(</span><span class="n">byte_code</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Autre possibilité: True uniquement si seed == 1203
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">md</span> <span class="o">=</span> <span class="n">Cs</span><span class="p">(</span><span class="n">CS_ARCH_X86</span><span class="p">,</span> <span class="n">CS_MODE_64</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">instructions</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">disasm</span><span class="p">(</span><span class="n">byte_code</span><span class="p">,</span> <span class="mh">0x1000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">len</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">instructions</span><span class="p">])</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">randomize</span> <span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">j</span> <span class="o">=</span> <span class="n">libc</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">arr</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">entropy_list</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">libc</span><span class="o">.</span><span class="n">srand</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">init</span> <span class="o">=</span> <span class="n">randomize</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)],</span><span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">new_array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">n</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">new_array</span><span class="p">[</span><span class="n">init</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">ARC4Cipher</span><span class="p">(</span><span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="s2">&#34;e1a4646ee8acd20f4578dbea4a79380a&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">new_array</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">new_array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">new_array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">:])</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># if check_instructions(b&#34;&#34;.join(new_array)):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#     print(f&#34;[+] Found seed: {k}&#34;)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#     exit(1)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">entropy_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">calculate_entropy</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_array</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">entropy_list</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Result&#39;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;PIN&#39;</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Entropie&#39;</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>        
+</span></span></code></pre></div><p><img alt="entropie_output" src="/posts/deck_decoder/image-3.png"></p>
+<p>On trouve la seed <code>1203</code></p>
+<p>Cette seed nous donne donc un shellcode correct, on va pouvoir l&rsquo;émuler avec miasm.</p>
+<h2 id="résolution-du-crackme">Résolution du crackme</h2>
+<p>Il faut être asticieux pour avoir a bruteforce que (100) possibilitées à chaque fois et non 2 octets en s&rsquo;aidant du 1er caractère du flag connu.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">shellcode</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="s2">&#34;666748b8560c47c8215c3817674831f8fff348bbda3f33b05daaca314a31fb67fff16648b95b7a470a7c1170bf664a31f967526648ba7a8f6775979f273e66483&#34;</span><span class="p">)</span><span class="c1">#... big shellcode</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">miasm.analysis.binary</span> <span class="kn">import</span> <span class="n">Container</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">miasm.analysis.machine</span> <span class="kn">import</span> <span class="n">Machine</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">miasm.core.locationdb</span> <span class="kn">import</span> <span class="n">LocationDB</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">miasm.arch.x86.jit</span> <span class="kn">import</span> <span class="n">jitter_x86_64</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">miasm.jitter.csts</span> <span class="kn">import</span> <span class="n">PAGE_READ</span><span class="p">,</span> <span class="n">PAGE_WRITE</span><span class="p">,</span><span class="n">PAGE_EXEC</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">printable</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="n">search_values</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0x751E22F6AFDC1D1A</span><span class="p">,</span> <span class="mh">0x25E2D8737E1EE778</span><span class="p">,</span> <span class="mh">0x5FA5062A2A463E93</span><span class="p">,</span> <span class="mh">0x31E402F96E8BDF97</span><span class="p">,</span> <span class="mh">0x835BE6989055C8F7</span><span class="p">,</span> <span class="mh">0x5D96E686BBBB53FA</span><span class="p">,</span> <span class="mh">0xECE6FF58CDD9D31A</span><span class="p">,</span> <span class="mh">0xC21A2CBC37DBC25F</span><span class="p">,</span> <span class="mh">0x504E496158267321</span><span class="p">,</span> <span class="mh">0x1E7F1D0186F1EC8C</span><span class="p">,</span> <span class="mh">0x177A0713EE72684C</span><span class="p">,</span> <span class="mh">0x701183528F5AC6CF</span><span class="p">,</span> <span class="mh">0xB732A1AFDC2F5679</span><span class="p">,</span> <span class="mh">0x76C06994CE3A61BC</span><span class="p">,</span> <span class="mh">0xF5F06AB9884DE54F</span><span class="p">,</span> <span class="mh">0x701183528F5AC6CF</span><span class="p">,</span> <span class="mh">0x5A37ADF157A8C201</span><span class="p">,</span> <span class="mh">0xC094D5287D091C4F</span><span class="p">,</span> <span class="mh">0xF5F06AB9884DE54F</span><span class="p">,</span> <span class="mh">0x3DAA050C3B50450E</span><span class="p">,</span> <span class="mh">0xA93C0AF6A0E9C41C</span><span class="p">,</span> <span class="mh">0xF5D4CBAB3B2C88A3</span><span class="p">,</span> <span class="mh">0xA27A01B298EC17A8</span><span class="p">,</span> <span class="mh">0x5FCEFDDD776A26F0</span><span class="p">,</span> <span class="mh">0xDEBDE5DBB1C1C4B3</span><span class="p">,</span> <span class="mh">0xE08C572F24190AB</span><span class="p">,</span> <span class="mh">0xD512D32829E4869</span><span class="p">,</span> <span class="mh">0xFFBD122F4A434777</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">finish</span><span class="p">(</span><span class="n">jitter</span><span class="p">:</span> <span class="n">jitter_x86_64</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">global</span> <span class="n">result</span>
+</span></span><span class="line"><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="n">jitter</span><span class="o">.</span><span class="n">cpu</span><span class="o">.</span><span class="n">RAX</span>
+</span></span><span class="line"><span class="cl">    <span class="n">jitter</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">loc_db</span> <span class="o">=</span> <span class="n">LocationDB</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cont</span> <span class="o">=</span> <span class="n">Container</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span><span class="n">shellcode</span><span class="p">,</span> <span class="n">loc_db</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">machine</span> <span class="o">=</span> <span class="n">Machine</span><span class="p">(</span><span class="s2">&#34;x86_64&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">mdis</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">dis_engine</span><span class="p">(</span><span class="n">cont</span><span class="o">.</span><span class="n">bin_stream</span><span class="p">,</span> <span class="n">loc_db</span><span class="o">=</span><span class="n">loc_db</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">myjit</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">jitter</span><span class="p">(</span><span class="n">loc_db</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">run_addr</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="n">myjit</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">add_memory_page</span><span class="p">(</span><span class="n">run_addr</span><span class="p">,</span> <span class="n">PAGE_READ</span> <span class="o">|</span> <span class="n">PAGE_WRITE</span> <span class="o">|</span> <span class="n">PAGE_EXEC</span><span class="p">,</span> <span class="n">shellcode</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">myjit</span><span class="o">.</span><span class="n">init_stack</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">myjit</span><span class="o">.</span><span class="n">push_uint64_t</span><span class="p">(</span><span class="mh">0xdead0000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">myjit</span><span class="o">.</span><span class="n">add_breakpoint</span><span class="p">(</span><span class="mh">0xdead0000</span><span class="p">,</span> <span class="n">finish</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">test_combinaison</span><span class="p">(</span><span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">t1</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">myjit</span><span class="o">.</span><span class="n">push_uint64_t</span><span class="p">(</span><span class="mh">0xdead0000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">t1</span> <span class="o">|=</span> <span class="p">(</span><span class="n">value1</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">t1</span> <span class="o">|=</span> <span class="p">(</span><span class="n">value2</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">myjit</span><span class="o">.</span><span class="n">cpu</span><span class="o">.</span><span class="n">RDI</span> <span class="o">=</span> <span class="n">t1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">myjit</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">run_addr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">result</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">find_carac</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">elm</span> <span class="ow">in</span> <span class="n">printable</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">a</span> <span class="o">=</span> <span class="n">test_combinaison</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="nb">ord</span><span class="p">(</span><span class="n">elm</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">search_values</span><span class="p">[</span><span class="n">index</span><span class="p">]):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">elm</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">start</span> <span class="o">=</span> <span class="s1">&#39;M&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">passwd</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="o">+</span><span class="n">start</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">search_values</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">start</span> <span class="o">=</span> <span class="n">find_carac</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">start</span><span class="p">),</span> <span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">passwd</span> <span class="o">+=</span><span class="n">start</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">passwd</span><span class="p">)</span>
+</span></span></code></pre></div><p><img alt="alt text" src="/posts/deck_decoder/image-2.png"></p>
+<p>Flag: <code>MCTF{ShUff13_th3_sh3LLc0de!!}</code></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Merci à l&rsquo;organisation et félicitation aux flaggers du challenge ❤</p>
+<p><a href="/posts/deck_decoder/script.py">Le script de recherche</a></p>
+<p><a href="/posts/deck_decoder/miasmthis.py">Le script miasm</a></p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/p2lu" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://twitter.com/Prince2lu2" target="_blank" rel="noopener noreferrer me"
+    title="Twitter">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+    </path>
+</svg>
+</a>
+<a href="https://www.root-me.org/Prince2Lu" target="_blank" rel="noopener noreferrer me"
+    title="Root-Me">
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="234.000000pt" height="300.000000pt" viewBox="0 0 234.000000 300.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)"
+fill="#888a90" stroke="none">
+<path d="M968 2983 c-15 -9 -35 -32 -45 -50 -10 -18 -23 -33 -29 -33 -29 0
+-177 -56 -259 -98 -445 -229 -700 -729 -620 -1220 8 -51 28 -134 45 -184 26
+-82 27 -93 14 -112 -32 -46 -10 -139 40 -165 l26 -14 2 -246 3 -246 192 -135
+193 -135 0 -161 c0 -111 4 -164 12 -172 9 -9 163 -12 630 -12 600 0 618 1 628
+19 5 11 10 87 10 174 l0 154 195 137 195 137 0 241 0 241 35 38 c38 42 46 93
+24 142 -9 19 -5 41 19 113 121 361 56 760 -173 1065 -152 203 -371 356 -602
+421 -69 20 -82 27 -91 50 -11 31 -66 68 -100 68 -38 0 -92 -30 -107 -61 -33
+-63 -8 -147 51 -169 l24 -10 0 -224 c0 -145 4 -227 10 -231 6 -4 53 8 104 26
+l92 33 27 -20 c25 -18 26 -22 27 -120 l0 -101 -61 -67 c-75 -82 -250 -229
+-260 -219 -4 5 -35 74 -69 155 l-63 147 22 27 c25 31 26 55 6 93 -42 82 -171
+48 -168 -45 1 -40 24 -70 68 -88 26 -11 39 -33 98 -171 37 -86 67 -158 65
+-160 -9 -8 -187 -124 -215 -140 l-32 -19 -202 61 -203 61 -64 -24 c-56 -21
+-67 -22 -81 -10 -55 48 -151 4 -151 -70 0 -30 30 -71 59 -84 55 -22 113 10
+126 70 5 22 17 32 59 48 l54 20 170 -51 c94 -28 169 -54 166 -58 -8 -14 -335
+-170 -467 -223 -133 -54 -139 -55 -182 -44 -49 13 -56 26 -96 173 -18 66 -22
+109 -23 245 -1 91 2 177 7 193 l7 27 258 0 258 0 22 -29 c52 -70 162 -33 162
+54 0 37 -16 62 -51 81 -40 20 -84 10 -111 -27 l-22 -29 -253 0 c-139 0 -253 2
+-253 3 0 2 9 33 21 68 107 327 361 586 680 694 89 31 90 31 135 0 53 -36 103
+-34 148 6 58 51 58 125 1 179 -32 30 -101 37 -137 13z m97 -68 c30 -29 31 -49
+5 -75 -28 -28 -66 -26 -86 5 -20 31 -12 68 18 83 33 15 36 15 63 -13z m273 9
+c32 -22 27 -73 -9 -93 -24 -13 -29 -13 -53 2 -34 22 -36 69 -4 91 28 20 38 20
+66 0z m154 -128 c69 -20 170 -65 226 -100 39 -24 42 -30 42 -70 0 -97 -83
+-322 -150 -406 l-20 -25 0 65 c0 60 2 68 30 92 62 54 27 158 -53 158 -43 0
+-83 -31 -92 -69 -5 -25 -16 -33 -71 -55 -35 -14 -66 -26 -69 -26 -3 0 -5 90
+-5 200 0 199 0 201 23 209 12 5 31 18 41 30 11 12 25 20 30 18 6 -2 36 -12 68
+-21z m403 -230 c143 -117 283 -361 332 -579 39 -172 -52 -376 -254 -567 -164
+-155 -462 -335 -725 -439 l-78 -31 -97 20 c-165 34 -364 92 -513 149 l-55 21
+52 -48 52 -48 0 -66 c-2 -263 324 -355 463 -130 20 32 23 34 69 28 45 -6 54
+-12 161 -120 93 -94 121 -116 157 -126 57 -15 73 -9 288 112 116 65 169 101
+179 120 11 20 14 73 14 213 l0 187 103 101 c57 56 123 130 147 165 23 34 44
+62 46 62 7 0 -9 -67 -37 -156 l-29 -91 -38 -7 c-45 -7 -81 -41 -91 -88 -10
+-51 -3 -76 35 -113 l34 -34 0 -218 c0 -216 0 -218 -22 -232 -48 -29 -347 -243
+-357 -255 -6 -7 -12 -76 -13 -157 l-3 -144 -90 0 -90 0 -3 50 c-3 72 -10 93
+-32 105 -14 8 -26 8 -40 0 -17 -9 -20 -21 -20 -70 0 -92 2 -90 -111 -90 -117
+0 -120 3 -117 109 2 77 -10 101 -48 101 -33 0 -44 -33 -44 -131 l0 -80 -107 3
+-108 3 -3 66 c-2 51 -8 71 -22 84 -18 16 -21 16 -44 1 -22 -14 -25 -24 -28
+-83 l-3 -68 -90 0 -90 0 -3 147 -3 148 -72 53 c-39 29 -127 91 -194 137 l-122
+85 -1 222 0 221 30 30 c18 19 32 45 36 69 l6 39 121 48 c663 262 1159 641
+1341 1026 35 74 76 212 76 257 0 30 5 29 55 -11z m-1687 -1302 c24 -17 30 -62
+10 -82 -17 -17 -64 -15 -82 4 -23 22 -20 60 6 78 12 9 27 16 33 16 6 0 21 -7
+33 -16z m1978 8 c6 -4 16 -17 23 -29 31 -60 -64 -105 -101 -49 -29 43 35 107
+78 78z m-1285 -362 c39 -11 74 -21 76 -23 10 -11 -43 -58 -77 -68 -98 -30
+-200 41 -200 139 l0 31 64 -29 c36 -16 97 -39 137 -50z"/>
+<path d="M1140 598 c-52 -56 -101 -129 -98 -145 5 -26 50 -28 73 -3 24 27 84
+27 119 -1 14 -11 34 -19 44 -17 34 6 24 44 -30 109 -74 90 -76 91 -108 57z"/>
+<path d="M1010 2633 c-26 -9 -60 -46 -60 -63 0 -11 -16 -23 -42 -33 -24 -9
+-69 -26 -100 -37 l-57 -21 -3 -66 -3 -66 -68 1 c-62 0 -69 2 -96 31 -41 44
+-98 44 -135 0 -35 -41 -34 -83 3 -120 44 -43 114 -35 142 17 12 23 18 24 105
+24 l93 0 3 72 3 72 78 29 79 29 21 -20 c33 -31 71 -37 106 -16 48 29 62 74 37
+123 -21 39 -67 58 -106 44z"/>
+</g>
+</svg>
+</a>
+<a href="/index.xml" target="_blank" rel="noopener noreferrer me"
+    title="Rss">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2025 .
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+    
+    
+        
+    
+
+    
+    
+        
+    
+
+
+
+    
+    <script src="https://p2lu.github.io/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js" integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30&#43;lSNuSkl4QXuNyy8="></script>
+
+    
+
+</body>
+</html>

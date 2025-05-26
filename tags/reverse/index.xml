@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reverse on Prince 2 lu&#39;s blog</title>
+    <link>https://p2lu.github.io/tags/reverse/</link>
+    <description>Recent content in Reverse on Prince 2 lu&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Sun, 27 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://p2lu.github.io/tags/reverse/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🇫🇷 FCSC | FCSCLang ⭐⭐⭐</title>
+      <link>https://p2lu.github.io/posts/fcsclang/writeup/</link>
+      <pubDate>Sun, 27 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://p2lu.github.io/posts/fcsclang/writeup/</guid>
+      
+      <description>Reverse: FCSCLang ⭐⭐⭐ Introduction On ouvre l&amp;rsquo;archive et on découvre
+fcsclang un binaire ELF 64-bit. libfcsclang.so une librairie ELF 64 bit. program.fcsc un grand fichier texte. Pour lancer correctement le binaire, il nous faut la version 0.22 de libtree-sitter
+On remarque imédiatement que program.fcsc contient du texte complètement lisible, c&amp;rsquo;est même la copie du voyage au centre de la terre de Jules Vernes, avec quelques legères modifications notement sur la ponctuation et les espaces.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mobile on Prince 2 lu&#39;s blog</title>
+    <link>https://p2lu.github.io/tags/mobile/</link>
+    <description>Recent content in Mobile on Prince 2 lu&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Sat, 05 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://p2lu.github.io/tags/mobile/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🇫🇷 ph0wn Musical Ear</title>
+      <link>https://p2lu.github.io/posts/ph0wn_musical_ear/writeup/</link>
+      <pubDate>Sat, 05 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://p2lu.github.io/posts/ph0wn_musical_ear/writeup/</guid>
+      
+      <description>ph0wn Musical Ear Ce challenge etait proposé à l&amp;rsquo;édition 2021 du ph0wn, je n&amp;rsquo;ai pas participé à cette édition mais ait réalisé le challenge plusieurs mois après.
+Le writeup officiel est disponnible ici
+1ere reconnaissance On est face à une application android (.apk). Pour émuler et avoir une idée de ce que le programme fait j&amp;rsquo;utilise genymotion.
+On atteri sur une jolie interface
+Le bouton play sound nous joue une note, le jeu consistera à trouver parfaitement la note parmis un panel de 12 possibilitées.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

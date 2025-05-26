@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Prince 2 lu&#39;s blog</title>
+    <link>https://p2lu.github.io/posts/</link>
+    <description>Recent content in Posts on Prince 2 lu&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Sun, 27 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://p2lu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🇫🇷 FCSC | DisplayPort ⭐⭐⭐</title>
+      <link>https://p2lu.github.io/posts/displayport/writeup/</link>
+      <pubDate>Sun, 27 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://p2lu.github.io/posts/displayport/writeup/</guid>
+      
+      <description>Hardware: Display Port ⭐⭐⭐ Ce challenge nous présente le résultat d&amp;rsquo;une capture décodée du signal différentiel entre les pin #1 et #3
+On a pas mal d&amp;rsquo;informations à propos de la norme, des dimensions et des caractéristiques de l&amp;rsquo;écran, tout ne va pas nous servir tout de suite. Il faut y aller pas à pas.
+Une 1ere recherche rapide sur Wikipédia nous apprend que les pin 1 et 3 correspondent aux données transmises par la ligne 0 sur les 3 lignes correspondantes.</description>
+      
+    </item>
+    
+    <item>
+      <title>🇫🇷 FCSC | FCSCLang ⭐⭐⭐</title>
+      <link>https://p2lu.github.io/posts/fcsclang/writeup/</link>
+      <pubDate>Sun, 27 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://p2lu.github.io/posts/fcsclang/writeup/</guid>
+      
+      <description>Reverse: FCSCLang ⭐⭐⭐ Introduction On ouvre l&amp;rsquo;archive et on découvre
+fcsclang un binaire ELF 64-bit. libfcsclang.so une librairie ELF 64 bit. program.fcsc un grand fichier texte. Pour lancer correctement le binaire, il nous faut la version 0.22 de libtree-sitter
+On remarque imédiatement que program.fcsc contient du texte complètement lisible, c&amp;rsquo;est même la copie du voyage au centre de la terre de Jules Vernes, avec quelques legères modifications notement sur la ponctuation et les espaces.</description>
+      
+    </item>
+    
+    <item>
+      <title>🇫🇷 MIDNIGHT BACKSLASH Qualif | [Hard]</title>
+      <link>https://p2lu.github.io/posts/deck_decoder/wu/</link>
+      <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://p2lu.github.io/posts/deck_decoder/wu/</guid>
+      
+      <description>Deck Decoder J&amp;rsquo;ai pu participer à la création de challenges lors de l&amp;rsquo;édition 2024 du Midnight Flag CTF.
+Voici le writeup &amp;ldquo;untended&amp;rdquo; du challenge.
+Initialisation Ce challenge est un binaire ELF x86_64 strippé. Toutes les addresses mentionnées dans ce WU seront à partir de la base: 0x100000
+On retrouve l&amp;rsquo;utilisation de srand dans le main qui utilise en 1er argument l&amp;rsquo;argument pin de notre programme.
+On trouve arapidement un array de chaines d&amp;rsquo;octets qui semble subir plusieurs transformations, notement la fonction 0x10e5ef, appelons la randomize.</description>
+      
+    </item>
+    
+    <item>
+      <title>🇬🇧 HTBA | Maze Of Power [Insane]</title>
+      <link>https://p2lu.github.io/posts/mazeofpower-wu/writeup/</link>
+      <pubDate>Tue, 12 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://p2lu.github.io/posts/mazeofpower-wu/writeup/</guid>
+      
+      <description>MazeOfPower This challenge was a insane reverse engineering challenge from the Hack The Box Apocalypse 2024 CTF
+Initial Recon We are facing a ELF x86_64 binary with debug symbols.
+main: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=246eec7fd33acbeba185edfe290af7cb632dec84, for GNU/Linux 3.2.0, with debug_info, not stripped This binary was obviously written in golang, this might add some spice to the challenge.
+The binary is asking for the pow solution, I don&amp;rsquo;t have time to solve a PoW each time, so I just patched the condition.</description>
+      
+    </item>
+    
+    <item>
+      <title>🇬🇧 FCSC | ShuffleMe ⭐⭐</title>
+      <link>https://p2lu.github.io/posts/shuffleme-wu/writeup/</link>
+      <pubDate>Sun, 07 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://p2lu.github.io/posts/shuffleme-wu/writeup/</guid>
+      
+      <description>ShuffleMe ShuffleMe is a reverse challenge from the FCSC edition 2021 from Cryptanalyse.
+Recover the inputs to get the flag.
+shuffleMe - 22.02 KiB
+Initial recon We are facing a stripped ELF 64-bit executable, the binary is asking for an secret from the argv[1], then a input from stdin.
+int main(int argc,char **argv) { uint8_t buffer [80]; long local_18; int local_c; if (argc != 2) { fprintf(stderr,&amp;#34;Usage: %s &amp;lt;secret&amp;gt;\n&amp;#34;,argv[1]); exit(1); } local_c = atoi(argv[1]); memset(buffer,0,80); __isoc99_scanf(&amp;#34;%70s&amp;#34;,buffer); local_18 = FUN_401230(buffer,local_c); if (local_18 == 0x460000) { puts(&amp;#34;Yay!</description>
+      
+    </item>
+    
+    <item>
+      <title>🇬🇧 FCSC | Chaussette ⭐⭐</title>
+      <link>https://p2lu.github.io/posts/chausette-wu/writeup/</link>
+      <pubDate>Wed, 20 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://p2lu.github.io/posts/chausette-wu/writeup/</guid>
+      
+      <description>Chaussette To improve my skills in mastering the symbolic execution framework, I tried to solve this challenge with as many means as possible.
+I skipped the first reversing part which is not the interest here.
+Introduction about the challenge The goal of the challenge is to solve a lot of &amp;ldquo;puzzle&amp;rdquo;, which consist of a entry of arguments (RDI and RSI (System V ABI x86_64 calling convention)).
+The goal is to find input when RAX==0 at the end of the shellcode.</description>
+      
+    </item>
+    
+    <item>
+      <title>🇬🇧 DUCTF | Sideways</title>
+      <link>https://p2lu.github.io/posts/sideways/writeup/</link>
+      <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://p2lu.github.io/posts/sideways/writeup/</guid>
+      
+      <description>Sideways Sideways was a medium challenge from the DUCTF 2023.
+I managed to solve it using the miasm framework
+Initial recon We are facing a rust compiled binary, the binary is asking for an argument, our flag.
+Lets take a look at the check method.
+The flag must have a lenght of 26 (0x1a)
+Then, each character of the flag is computed like this schema, in &amp;ldquo;sideways&amp;rdquo;
+the product is then send to a absolutely chaotic set of manipulation.</description>
+      
+    </item>
+    
+    <item>
+      <title>🇫🇷 ph0wn Musical Ear</title>
+      <link>https://p2lu.github.io/posts/ph0wn_musical_ear/writeup/</link>
+      <pubDate>Sat, 05 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://p2lu.github.io/posts/ph0wn_musical_ear/writeup/</guid>
+      
+      <description>ph0wn Musical Ear Ce challenge etait proposé à l&amp;rsquo;édition 2021 du ph0wn, je n&amp;rsquo;ai pas participé à cette édition mais ait réalisé le challenge plusieurs mois après.
+Le writeup officiel est disponnible ici
+1ere reconnaissance On est face à une application android (.apk). Pour émuler et avoir une idée de ce que le programme fait j&amp;rsquo;utilise genymotion.
+On atteri sur une jolie interface
+Le bouton play sound nous joue une note, le jeu consistera à trouver parfaitement la note parmis un panel de 12 possibilitées.</description>
+      
+    </item>
+    
+    <item>
+      <title>🇫🇷 PWNME 2023 | Nanobits [Insane]</title>
+      <link>https://p2lu.github.io/posts/pwnme_nanobits/writeup/</link>
+      <pubDate>Fri, 05 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://p2lu.github.io/posts/pwnme_nanobits/writeup/</guid>
+      
+      <description>Nanobits Premièrement le fichier donné est au format PE, il faudra donc un environnement Windows pour espérer le lancer.
+On utilise Ghidra pour découvrir le binaire, le début est très difficilement compréhensible et on a du mal à se repérer.
+Il n&amp;rsquo;y a aucune chaine de caractère définie en statique dans le programme, le titre nous avait prévenu, on est sur une protection par nanomites.
+Usuellement on trouve les nanomites sur des binaires ELF avec des traces comme le syscall PTRACE, qui permet de gérer de manière extérieure le sous-programme.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

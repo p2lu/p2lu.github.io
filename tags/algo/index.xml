@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Algo on Prince 2 lu&#39;s blog</title>
+    <link>https://p2lu.github.io/tags/algo/</link>
+    <description>Recent content in Algo on Prince 2 lu&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Sun, 28 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://p2lu.github.io/tags/algo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🇫🇷 MIDNIGHT BACKSLASH Qualif | [Hard]</title>
+      <link>https://p2lu.github.io/posts/deck_decoder/wu/</link>
+      <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://p2lu.github.io/posts/deck_decoder/wu/</guid>
+      
+      <description>Deck Decoder J&amp;rsquo;ai pu participer à la création de challenges lors de l&amp;rsquo;édition 2024 du Midnight Flag CTF.
+Voici le writeup &amp;ldquo;untended&amp;rdquo; du challenge.
+Initialisation Ce challenge est un binaire ELF x86_64 strippé. Toutes les addresses mentionnées dans ce WU seront à partir de la base: 0x100000
+On retrouve l&amp;rsquo;utilisation de srand dans le main qui utilise en 1er argument l&amp;rsquo;argument pin de notre programme.
+On trouve arapidement un array de chaines d&amp;rsquo;octets qui semble subir plusieurs transformations, notement la fonction 0x10e5ef, appelons la randomize.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en-gb"><head><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">🇬🇧 FCSC | ShuffleMe ⭐⭐ | Prince 2 lu&#39;s blog</title>
+<meta property="og:title" content="🇬🇧 FCSC | ShuffleMe ⭐⭐ | Prince 2 lu&#39;s blog" />
+<meta name="twitter:title" content="🇬🇧 FCSC | ShuffleMe ⭐⭐ | Prince 2 lu&#39;s blog" />
+<meta itemprop="name" content="🇬🇧 FCSC | ShuffleMe ⭐⭐ | Prince 2 lu&#39;s blog" />
+<meta name="application-name" content="🇬🇧 FCSC | ShuffleMe ⭐⭐ | Prince 2 lu&#39;s blog" />
+<meta property="og:site_name" content="Prince 2 lu&#39;s blog " />
+
+<meta name="description" content="Solving the FCSC ShuffleMe using miasm">
+<meta itemprop="description" content="Solving the FCSC ShuffleMe using miasm" />
+<meta property="og:description" content="Solving the FCSC ShuffleMe using miasm" />
+<meta name="twitter:description" content="Solving the FCSC ShuffleMe using miasm" />
+
+<meta property="og:locale" content="en-gb" />
+<meta name="language" content="en-gb" />
+
+  <link rel="alternate" hreflang="en-gb" href="https://p2lu.github.io/posts/shuffleme-wu/writeup/" title="English" />
+
+
+
+  <meta itemprop="image" content="https://p2lu.github.io/" />
+  <meta property="og:image" content="https://p2lu.github.io/" />
+  <meta name="twitter:image" content="https://p2lu.github.io/" />
+  <meta name="twitter:image:src" content="https://p2lu.github.io/" />
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2024-01-07T00:00:00Z />
+    <meta property="article:published_time" content=2024-01-07T00:00:00Z />
+
+    
+    <meta property="og:article:author" content="Prince 2 lu" />
+    <meta property="article:author" content="Prince 2 lu" />
+    <meta name="author" content="Prince 2 lu" />
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "🇬🇧 FCSC | ShuffleMe ⭐⭐",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2024-01-07",
+        "description": "Solving the FCSC ShuffleMe using miasm",
+        "wordCount":  1725 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2024-01-07",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Prince 2 lu\u0027s blog"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.125.5">
+
+    
+
+    <link rel="canonical" href="https://p2lu.github.io/posts/shuffleme-wu/writeup/">
+    <link href="/style.min.d43bc6c79baa87f006efb2b92be952faeedeb1a3ab626c1d6abda52eae049355.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="https://p2lu.github.io/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+  
+
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="https://p2lu.github.io/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/pages/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">🇬🇧 FCSC | ShuffleMe ⭐⭐</h1>
+                
+                
+                <div class="post-meta">
+                    <time datetime="2024-01-07T00:00:00&#43;00:00" itemprop="datePublished"> 7 Jan 2024 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#initial-recon">Initial recon</a></li>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#reversing-the-control-flow">Reversing the Control Flow</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </li>
+    <li><a href="#bonus"><strong>BONUS</strong></a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <h1 id="shuffleme">ShuffleMe</h1>
+<p>ShuffleMe is a reverse challenge from the FCSC edition 2021 from Cryptanalyse.</p>
+<blockquote>
+<p>Recover the inputs to get the flag.</p>
+</blockquote>
+<blockquote>
+<p><code>shuffleMe</code> - 22.02 KiB</p>
+</blockquote>
+<h3 id="initial-recon">Initial recon</h3>
+<p>We are facing a stripped ELF 64-bit executable, the binary is asking for an secret from the <code>argv[1]</code>, then a input from <code>stdin</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span><span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">uint8_t</span> <span class="n">buffer</span> <span class="p">[</span><span class="mi">80</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">long</span> <span class="n">local_18</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">local_c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="s">&#34;Usage: %s &lt;secret&gt;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="n">local_c</span> <span class="o">=</span> <span class="nf">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">memset</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">80</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">__isoc99_scanf</span><span class="p">(</span><span class="s">&#34;%70s&#34;</span><span class="p">,</span><span class="n">buffer</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">local_18</span> <span class="o">=</span> <span class="nf">FUN_401230</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span><span class="n">local_c</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">local_18</span> <span class="o">==</span> <span class="mh">0x460000</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">puts</span><span class="p">(</span><span class="s">&#34;Yay!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">puts</span><span class="p">(</span><span class="s">&#34;Nope.&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><em>For this writeup, I will use the base address <code>0x400000</code></em></p>
+<p>The following function can look weird, the <code>FUN_401230</code> function call <code>FUN 401245</code> which seems to end quite suddenly.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="err">00401245</span> <span class="err">41</span> <span class="err">58</span>           <span class="nf">POP</span>        <span class="no">R8</span>
+</span></span><span class="line"><span class="cl"><span class="err">00401247</span> <span class="err">49</span> <span class="err">83</span> <span class="nf">c0</span> <span class="mi">38</span>     <span class="no">ADD</span>        <span class="no">R8</span><span class="p">,</span><span class="mi">0x38</span> <span class="c1">; The next instruction after 0x0040127b
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="err">0040124</span><span class="nf">b</span> <span class="mi">50</span>              <span class="no">PUSH</span>       <span class="no">RAX</span>     <span class="c1">; The Buffer
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="err">0040124</span><span class="nf">c</span> <span class="mi">48</span> <span class="mi">89</span> <span class="no">f0</span>        <span class="no">MOV</span>        <span class="no">RAX</span><span class="p">,</span><span class="no">RSI</span> <span class="c1">; Store the secret to RAX
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="err">0040124</span><span class="nf">f</span> <span class="mi">48</span> <span class="no">c7</span> <span class="no">c1</span>        <span class="no">MOV</span>        <span class="no">RCX</span><span class="p">,</span><span class="mi">0xb5</span>
+</span></span><span class="line"><span class="cl">         <span class="nf">b5</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>
+</span></span><span class="line"><span class="cl"><span class="err">00401256</span> <span class="err">48</span> <span class="nf">f7</span> <span class="no">e1</span>        <span class="no">MUL</span>        <span class="no">RCX</span>
+</span></span><span class="line"><span class="cl"><span class="err">00401259</span> <span class="err">48</span> <span class="err">05</span> <span class="nf">d9</span>        <span class="no">ADD</span>        <span class="no">RAX</span><span class="p">,</span><span class="mi">0xd9</span>
+</span></span><span class="line"><span class="cl">         <span class="err">00</span> <span class="err">00</span> <span class="err">00</span>
+</span></span><span class="line"><span class="cl"><span class="err">0040125</span><span class="nf">f</span> <span class="mi">48</span> <span class="no">c7</span> <span class="no">c1</span>        <span class="no">MOV</span>        <span class="no">RCX</span><span class="p">,</span><span class="mi">0x200</span>
+</span></span><span class="line"><span class="cl">         <span class="err">00</span> <span class="err">02</span> <span class="err">00</span> <span class="err">00</span>
+</span></span><span class="line"><span class="cl"><span class="err">00401266</span> <span class="err">48</span> <span class="nf">f7</span> <span class="no">f1</span>        <span class="no">DIV</span>        <span class="no">RCX</span>
+</span></span><span class="line"><span class="cl"><span class="err">00401269</span> <span class="err">48</span> <span class="err">89</span> <span class="nf">d6</span>        <span class="no">MOV</span>        <span class="no">RSI</span><span class="p">,</span><span class="no">RDX</span>
+</span></span><span class="line"><span class="cl"><span class="err">0040126</span><span class="nf">c</span> <span class="mi">48</span> <span class="mi">89</span> <span class="no">f1</span>        <span class="no">MOV</span>        <span class="no">RCX</span><span class="p">,</span><span class="no">RSI</span>
+</span></span><span class="line"><span class="cl"><span class="err">0040126</span><span class="nf">f</span> <span class="mi">48</span> <span class="no">c1</span> <span class="no">e1</span> <span class="mi">04</span>     <span class="no">SHL</span>        <span class="no">RCX</span><span class="p">,</span><span class="mi">0x4</span>
+</span></span><span class="line"><span class="cl"><span class="err">00401273</span> <span class="err">4</span><span class="nf">c</span> <span class="mi">01</span> <span class="no">c1</span>        <span class="no">ADD</span>        <span class="no">RCX</span><span class="p">,</span><span class="no">R8</span>
+</span></span><span class="line"><span class="cl"><span class="err">00401276</span> <span class="err">58</span>              <span class="nf">POP</span>        <span class="no">RAX</span>
+</span></span><span class="line"><span class="cl"><span class="err">00401277</span> <span class="err">49</span> <span class="err">83</span> <span class="nf">eb</span> <span class="mi">07</span>     <span class="no">SUB</span>        <span class="no">R11</span><span class="p">,</span><span class="mi">0x7</span>
+</span></span><span class="line"><span class="cl"><span class="err">0040127</span><span class="nf">b</span> <span class="no">ff</span> <span class="no">e1</span>           <span class="no">JMP</span>        <span class="no">RCX</span>
+</span></span></code></pre></div><p>By manually disassembling the code after <code>0x40127b</code> we can see a pattern: one instruction, a tiny NOP sled, then a jump to <code>0x40124b</code>.</p>
+<p>From here, the challenge start drawing by itself, our secret input will be used to select which instruction jump, then the next instruction will be resolved and so on.</p>
+<p>This is a kind of Control Flow Flattening protection, but in our case it&rsquo;s up to the user to choose the instruction flow.</p>
+<h3 id="introduction">Introduction</h3>
+<p>The first thing that will help us in the analysis is to get all the possible RCX value from our secret input.</p>
+<p>We can manually get the operation and re-write them to a z3 script, it&rsquo;s not even 10 instructions.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">z3</span>
+</span></span><span class="line"><span class="cl"><span class="n">MASK</span> <span class="o">=</span> <span class="mh">0xffffffffffffffff</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">find_solution</span><span class="p">(</span><span class="n">target_addr</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span> <span class="o">=</span> <span class="n">z3</span><span class="o">.</span><span class="n">Solver</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">rax</span> <span class="o">=</span> <span class="n">z3</span><span class="o">.</span><span class="n">BitVec</span><span class="p">(</span><span class="s2">&#34;reg_RAX&#34;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span> <span class="c1"># our 32 bit input</span>
+</span></span><span class="line"><span class="cl">    <span class="n">r8</span> <span class="o">=</span> <span class="mh">0x40127d</span> <span class="c1"># addr of jmp rcx</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">constraints</span> <span class="o">=</span> <span class="p">((((</span> <span class="p">(</span><span class="n">rax</span><span class="o">*</span><span class="mh">0xb5</span><span class="p">)</span><span class="o">&amp;</span> <span class="n">MASK</span><span class="p">)</span><span class="o">+</span> <span class="mh">0xD9</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">MASK</span><span class="p">)</span><span class="o">%</span><span class="mh">0x200</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">s</span><span class="o">.</span><span class="n">add</span><span class="p">(((</span><span class="n">constraints</span><span class="o">&lt;&lt;</span><span class="mi">4</span><span class="p">)</span><span class="o">+</span><span class="n">r8</span><span class="p">)</span><span class="o">==</span><span class="n">target_addr</span><span class="p">)</span> <span class="c1"># RCX computed value</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">check</span><span class="p">()</span> <span class="o">==</span> <span class="n">z3</span><span class="o">.</span><span class="n">sat</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">model</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">model</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">model_index</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">model</span><span class="p">[</span><span class="n">_</span><span class="p">]))</span> <span class="c1"># just one solution</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;No solution found !&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span></code></pre></div><p>The last task that could be done manually is getting all the target address and link them to the a secret value.</p>
+<p>By copying the instruction set from <code>0x40127d</code> to <code>0x403278</code> using <code>objdump</code> or <code>ghidra</code> and 2 minutes of pasting using <a href="https://cyberchef.org/#recipe=Find_/_Replace(%7B'option':'Regex','string':'.*JMP.*'%7D,'',true,false,true,false)Find_/_Replace(%7B'option':'Regex','string':'.*NOP.*'%7D,'',true,false,true,false)Find_/_Replace(%7B'option':'Extended%20(%5C%5Cn,%20%5C%5Ct,%20%5C%5Cx...)','string':'%20%20'%7D,'',true,false,true,false)Regular_expression('User%20defined','%5E00%5C%5CS*',true,true,false,false,false,false,'List%20matches')">Cyberchef</a> we can have the list of the instructions address.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">target_addrr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4200717</span><span class="p">,</span> <span class="mi">4200733</span><span class="p">,</span> <span class="mi">4200749</span><span class="p">,</span> <span class="mi">4200765</span><span class="p">,</span> <span class="mi">4200781</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">instr2secret</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">addrr</span> <span class="ow">in</span> <span class="n">target_addrr</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">instr2secret</span><span class="p">[</span><span class="n">addrr</span><span class="p">]</span> <span class="o">=</span> <span class="n">find_solution</span><span class="p">(</span><span class="n">addrr</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="reversing-the-control-flow">Reversing the Control Flow</h3>
+<p>It&rsquo;s not possible to find the flag if I don&rsquo;t have the code that will check it, so the first step is to find the secret.</p>
+<p>Solving this type of challenge can be quite a pain, hopefully, <a href="https://github.com/cea-sec/miasm">the Miasm framework</a> will help us.</p>
+<p><img alt="miasm" src="https://raw.githubusercontent.com/ul2ecnirP/Hackropole-WU/main/shuffleMe-WU/miasm.jpg"></p>
+<p>The idea is to emulate <code>FUN_00401230</code> with the constants found previously for each instruction, store the shellcode generated, and then use a <code>symbolic execution engine</code> to find the target return address (0x460000).</p>
+<p>With this script I can get the shellcode for every secret value.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pathlib</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">miasm.jitter.jitload</span> <span class="kn">import</span> <span class="n">JitterException</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">miasm.analysis.binary</span> <span class="kn">import</span> <span class="n">Container</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">miasm.analysis.machine</span> <span class="kn">import</span> <span class="n">Machine</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">miasm.core.locationdb</span> <span class="kn">import</span> <span class="n">LocationDB</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">miasm.jitter.csts</span> <span class="kn">import</span> <span class="n">PAGE_READ</span><span class="p">,</span> <span class="n">PAGE_WRITE</span><span class="p">,</span><span class="n">EXCEPT_SYSCALL</span><span class="p">,</span> <span class="n">PAGE_EXEC</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">miasm.arch.x86.arch</span> <span class="kn">import</span> <span class="n">mn_x86</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">miasm.expression.expression</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">my_z3_script</span> <span class="kn">import</span> <span class="n">instr2secret</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">shellcode</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">supervisor</span><span class="p">(</span><span class="n">jitter</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">global</span> <span class="n">shellcodes</span> <span class="n">go</span> <span class="n">back</span> <span class="n">to</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">RCXValue</span> <span class="o">=</span> <span class="n">jitter</span><span class="o">.</span><span class="n">cpu</span><span class="o">.</span><span class="n">RCX</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">blk</span> <span class="o">=</span> <span class="n">mdis</span><span class="o">.</span><span class="n">dis_block</span><span class="p">(</span><span class="n">RCXValue</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">RCXValue</span> <span class="o">==</span> <span class="n">blk</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">offset</span><span class="p">):</span> <span class="c1"># Just to make sure i really execute the instruction</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">blk</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">hex</span><span class="p">(</span><span class="n">blk</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">offset</span><span class="p">))</span> <span class="c1"># print the shellcode instr per instr</span>
+</span></span><span class="line"><span class="cl">        <span class="n">shellcode</span> <span class="o">=</span> <span class="n">shellcode</span><span class="o">+</span><span class="n">mn_x86</span><span class="o">.</span><span class="n">asm</span><span class="p">(</span><span class="n">blk</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># get the bytecode</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">jitter</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># continue the execution</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">end_shellcode</span><span class="p">(</span><span class="n">jitter</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">global</span> <span class="n">shellcode</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">shellcode</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Now use symbolic execution to find rax=0x460000</span>
+</span></span><span class="line"><span class="cl">    <span class="n">shellcode</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">jitter</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">entry1</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&#34;A&#34;</span><span class="o">*</span><span class="mi">70</span> <span class="c1"># garbage input</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">path</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">absolute</span><span class="p">())</span><span class="o">+</span><span class="s2">&#34;/&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="o">+</span><span class="s2">&#34;shuffleMe&#34;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">loc_db</span> <span class="o">=</span> <span class="n">LocationDB</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">cont</span> <span class="o">=</span> <span class="n">Container</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">loc_db</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">machine</span> <span class="o">=</span> <span class="n">Machine</span><span class="p">(</span><span class="s2">&#34;x86_64&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">mdis</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">dis_engine</span><span class="p">(</span><span class="n">cont</span><span class="o">.</span><span class="n">bin_stream</span><span class="p">,</span> <span class="n">loc_db</span><span class="o">=</span><span class="n">loc_db</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">init_jit</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">global</span> <span class="n">myjit</span>
+</span></span><span class="line"><span class="cl">    <span class="n">myjit</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">jitter</span><span class="p">(</span><span class="n">loc_db</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">myjit</span><span class="o">.</span><span class="n">init_stack</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">base_addrr</span> <span class="o">=</span> <span class="mh">0x00400000</span>
+</span></span><span class="line"><span class="cl">    <span class="n">myjit</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">add_memory_page</span><span class="p">(</span><span class="n">base_addrr</span><span class="p">,</span> <span class="n">PAGE_READ</span> <span class="o">|</span> <span class="n">PAGE_WRITE</span> <span class="o">|</span> <span class="n">PAGE_EXEC</span> <span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">myjit</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">add_memory_page</span><span class="p">(</span><span class="mh">0xdead0000</span><span class="p">,</span> <span class="n">PAGE_READ</span> <span class="p">,</span> <span class="n">entry1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">myjit</span><span class="o">.</span><span class="n">cpu</span><span class="o">.</span><span class="n">RDI</span> <span class="o">=</span> <span class="mh">0xdead0000</span>
+</span></span><span class="line"><span class="cl">    <span class="n">myjit</span><span class="o">.</span><span class="n">cpu</span><span class="o">.</span><span class="n">RAX</span> <span class="o">=</span> <span class="mh">0xdead0000</span>
+</span></span><span class="line"><span class="cl">    <span class="n">myjit</span><span class="o">.</span><span class="n">add_breakpoint</span><span class="p">(</span><span class="mh">0x0401205</span><span class="p">,</span> <span class="n">end_shellcode</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">myjit</span><span class="o">.</span><span class="n">add_breakpoint</span><span class="p">(</span><span class="mh">0x40127b</span><span class="p">,</span> <span class="n">supervisor</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">init_jit</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">addrr</span><span class="p">,</span> <span class="n">secret</span> <span class="ow">in</span> <span class="n">instr2secret</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">secret</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">entry2</span> <span class="o">=</span> <span class="n">secret</span>
+</span></span><span class="line"><span class="cl">    <span class="n">myjit</span><span class="o">.</span><span class="n">cpu</span><span class="o">.</span><span class="n">RSI</span> <span class="o">=</span> <span class="n">entry2</span>
+</span></span><span class="line"><span class="cl">    <span class="n">myjit</span><span class="o">.</span><span class="n">cpu</span><span class="o">.</span><span class="n">RDX</span> <span class="o">=</span> <span class="n">entry2</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">myjit</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="mh">0x401200</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="n">JitterException</span><span class="p">:</span> <span class="c1"># Some address point will make the program crash</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Error for: &#34;</span><span class="p">,</span><span class="nb">hex</span><span class="p">(</span><span class="n">addrr</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&#34;(</span><span class="si">{</span><span class="n">secret</span><span class="si">}</span><span class="s2">)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">myjit</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">        <span class="n">init_jit</span><span class="p">()</span>
+</span></span></code></pre></div><p>The next step with the symbolic execution didn&rsquo;t work, the result was hardly parsable, and the amount of time to handle over the 500 possibilities would be too big. I found a better solution.</p>
+<p>The instruction flow created from our secret will define the entry point of the shellcode, but the next address will follow the same set until the end.</p>
+<p><strong>NOTE</strong> The shellcode is linear, which means there are no conditions or jumps.</p>
+<p>By setting the secret value, we finally only select where we start in the shellcode.</p>
+<p>The next step is to count all the instructions for each entry point, then sort all the values. The entry with the most of instructions will logically be the plain shellcode.</p>
+<p>Some adjustments will be needed:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">supervisor</span><span class="p">(</span><span class="n">jitter</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">global</span> <span class="n">global_count</span>
+</span></span><span class="line"><span class="cl">    <span class="n">RCXValue</span> <span class="o">=</span> <span class="n">jitter</span><span class="o">.</span><span class="n">cpu</span><span class="o">.</span><span class="n">RCX</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">blk</span> <span class="o">=</span> <span class="n">mdis</span><span class="o">.</span><span class="n">dis_block</span><span class="p">(</span><span class="n">RCXValue</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">RCXValue</span> <span class="o">==</span> <span class="n">blk</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">offset</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">global_count</span><span class="o">+=</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">jitter</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [...]</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">end_shellcode</span><span class="p">(</span><span class="n">jitter</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">global</span> <span class="n">global_count</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">entry_count</span><span class="p">[</span><span class="n">global_secret</span><span class="p">]</span> <span class="o">=</span> <span class="n">global_count</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">global_secret</span><span class="p">,</span><span class="s2">&#34;:&#34;</span><span class="p">,</span><span class="n">entry_count</span><span class="p">[</span><span class="n">global_secret</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="n">jitter</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [...]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">addrr</span><span class="p">,</span> <span class="n">secret</span> <span class="ow">in</span> <span class="n">my_z3_script</span><span class="o">.</span><span class="n">instr2secret</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">global_count</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">global_secret</span> <span class="o">=</span> <span class="n">secret</span>
+</span></span><span class="line"><span class="cl">    <span class="n">entry2</span> <span class="o">=</span> <span class="n">secret</span>
+</span></span><span class="line"><span class="cl">    <span class="n">myjit</span><span class="o">.</span><span class="n">cpu</span><span class="o">.</span><span class="n">RSI</span> <span class="o">=</span> <span class="n">entry2</span>
+</span></span><span class="line"><span class="cl">    <span class="n">myjit</span><span class="o">.</span><span class="n">cpu</span><span class="o">.</span><span class="n">RDX</span> <span class="o">=</span> <span class="n">entry2</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">myjit</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="mh">0x401200</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="n">JitterException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Error for: &#34;</span><span class="p">,</span><span class="nb">hex</span><span class="p">(</span><span class="n">addrr</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&#34;(</span><span class="si">{</span><span class="n">secret</span><span class="si">}</span><span class="s2">)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">myjit</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">        <span class="n">init_jit</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">entry_count</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span> <span class="c1"># sorted result</span>
+</span></span></code></pre></div><p>As exepted, after 5 minutes I finally have the sorted result.</p>
+<p>From:</p>
+<ul>
+<li><code>2752575725</code> : The secret value to get directly the <code>RET</code> instruction, size 1.</li>
+</ul>
+<p>To:</p>
+<ul>
+<li><code>972893146</code> : The secret value to directly go at the begin of the shellcode, size 511.</li>
+</ul>
+<p>Let&rsquo;s go back to our code from earlier and dump the shellcode from the secret <code>972893146</code>, save the shellcode, and then analyze it. I use ghidra by manually selecting the language x86 64 bits (because there&rsquo;s no metadata).</p>
+<p>The shellcode is pretty simple.</p>
+<p><img alt="ghidra_1" src="https://raw.githubusercontent.com/ul2ecnirP/Hackropole-WU/main/shuffleMe-WU/ghidra_1.png"></p>
+<p>The red-framed part is the same for every byte of the flag (stored in <code>RDI</code>).</p>
+<p>I have chosen to parse using z3 (again), symbolic execution for later :(</p>
+<p>Using gdb I&rsquo;ll get dynamically the state of the registers (at <code>0x0000001e</code>).</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">RBX</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="n">R9</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="n">R10</span> <span class="o">=</span> <span class="mh">0x10000</span>
+</span></span><span class="line"><span class="cl"><span class="n">R12</span> <span class="o">=</span> <span class="mh">0x33</span>
+</span></span></code></pre></div><p>Because I&rsquo;m lazy and I already have the tool in hand, I&rsquo;ll modify the supervisor function to get the list of constants xored to BX and the RSI value (which is the seed for the next instruction).</p>
+<p>I&rsquo;m sure it will work, and it relieves me of potential calculation errors.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">supervisor</span><span class="p">(</span><span class="n">jitter</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">global</span> <span class="n">shellcode</span>
+</span></span><span class="line"><span class="cl">    <span class="k">global</span> <span class="n">global_count</span>
+</span></span><span class="line"><span class="cl">    <span class="k">global</span> <span class="n">RSI_array</span>
+</span></span><span class="line"><span class="cl">    <span class="k">global</span> <span class="n">BX_array</span>
+</span></span><span class="line"><span class="cl">    <span class="n">RCXValue</span> <span class="o">=</span> <span class="n">jitter</span><span class="o">.</span><span class="n">cpu</span><span class="o">.</span><span class="n">RCX</span>
+</span></span><span class="line"><span class="cl">    <span class="n">jitter</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">    <span class="n">blk</span> <span class="o">=</span> <span class="n">mdis</span><span class="o">.</span><span class="n">dis_block</span><span class="p">(</span><span class="n">RCXValue</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">RCXValue</span> <span class="o">==</span> <span class="n">blk</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">offset</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">blk</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span><span class="s2">&#34;XOR&#34;</span> <span class="ow">and</span> <span class="n">blk</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">ExprId</span><span class="p">(</span><span class="s1">&#39;RBX&#39;</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span> <span class="ow">and</span> <span class="n">blk</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">ExprId</span><span class="p">(</span><span class="s1">&#39;RSI&#39;</span><span class="p">,</span> <span class="mi">64</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">RSI_array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">jitter</span><span class="o">.</span><span class="n">cpu</span><span class="o">.</span><span class="n">RSI</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">blk</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span><span class="s2">&#34;XOR&#34;</span> <span class="ow">and</span> <span class="n">blk</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">ExprId</span><span class="p">(</span><span class="s1">&#39;BX&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">blk</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="n">ExprInt</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">BX_array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">blk</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">blk</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">hex</span><span class="p">(</span><span class="n">blk</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">offset</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">True</span>
+</span></span></code></pre></div><p>We now have everything in hand to solve this challenge.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">z3</span>
+</span></span><span class="line"><span class="cl"><span class="n">RSI_val</span> <span class="o">=</span> <span class="p">[</span><span class="mi">299</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">509</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">351</span><span class="p">,</span> <span class="mi">358</span><span class="p">,</span> <span class="mi">465</span><span class="p">,</span> <span class="mi">272</span><span class="p">,</span> <span class="mi">467</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">485</span><span class="p">,</span> <span class="mi">212</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">494</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">472</span><span class="p">,</span> <span class="mi">379</span><span class="p">,</span> <span class="mi">274</span><span class="p">,</span> <span class="mi">205</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">374</span><span class="p">,</span> <span class="mi">417</span><span class="p">,</span> <span class="mi">416</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">282</span><span class="p">,</span> <span class="mi">181</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">471</span><span class="p">,</span> <span class="mi">510</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">459</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">413</span><span class="p">,</span> <span class="mi">428</span><span class="p">,</span> <span class="mi">511</span><span class="p">,</span> <span class="mi">390</span><span class="p">,</span> <span class="mi">369</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">389</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">295</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">473</span><span class="p">,</span> <span class="mi">248</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">306</span><span class="p">,</span> <span class="mi">109</span><span class="p">,</span> <span class="mi">316</span><span class="p">,</span> <span class="mi">335</span><span class="p">,</span> <span class="mi">406</span><span class="p">,</span> <span class="mi">321</span><span class="p">,</span> <span class="mi">192</span><span class="p">,</span> <span class="mi">195</span><span class="p">,</span> <span class="mi">314</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">388</span><span class="p">,</span> <span class="mi">119</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">425</span><span class="p">,</span> <span class="mi">392</span><span class="p">,</span> <span class="mi">107</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">317</span><span class="p">,</span> <span class="mi">204</span><span class="p">,</span> <span class="mi">159</span><span class="p">,</span> <span class="mi">422</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">BX_val</span> <span class="o">=</span> <span class="p">[</span><span class="mi">18285</span><span class="p">,</span> <span class="mi">17217</span><span class="p">,</span> <span class="mi">21166</span><span class="p">,</span> <span class="mi">17359</span><span class="p">,</span> <span class="mi">31268</span><span class="p">,</span> <span class="mi">24583</span><span class="p">,</span> <span class="mi">26551</span><span class="p">,</span> <span class="mi">13090</span><span class="p">,</span> <span class="mi">13281</span><span class="p">,</span> <span class="mi">25449</span><span class="p">,</span> <span class="mi">26499</span><span class="p">,</span> <span class="mi">25776</span><span class="p">,</span> <span class="mi">25827</span><span class="p">,</span> <span class="mi">13786</span><span class="p">,</span> <span class="mi">13839</span><span class="p">,</span> <span class="mi">25530</span><span class="p">,</span> <span class="mi">26397</span><span class="p">,</span> <span class="mi">25201</span><span class="p">,</span> <span class="mi">14581</span><span class="p">,</span> <span class="mi">12589</span><span class="p">,</span> <span class="mi">12447</span><span class="p">,</span> <span class="mi">13379</span><span class="p">,</span> <span class="mi">25282</span><span class="p">,</span> <span class="mi">25538</span><span class="p">,</span> <span class="mi">12817</span><span class="p">,</span> <span class="mi">14626</span><span class="p">,</span> <span class="mi">26064</span><span class="p">,</span> <span class="mi">12372</span><span class="p">,</span> <span class="mi">13795</span><span class="p">,</span> <span class="mi">14535</span><span class="p">,</span> <span class="mi">14385</span><span class="p">,</span> <span class="mi">14416</span><span class="p">,</span> <span class="mi">26541</span><span class="p">,</span> <span class="mi">14619</span><span class="p">,</span> <span class="mi">12717</span><span class="p">,</span> <span class="mi">13720</span><span class="p">,</span> <span class="mi">12751</span><span class="p">,</span> <span class="mi">13746</span><span class="p">,</span> <span class="mi">14408</span><span class="p">,</span> <span class="mi">25684</span><span class="p">,</span> <span class="mi">25623</span><span class="p">,</span> <span class="mi">13852</span><span class="p">,</span> <span class="mi">12725</span><span class="p">,</span> <span class="mi">25494</span><span class="p">,</span> <span class="mi">25666</span><span class="p">,</span> <span class="mi">12607</span><span class="p">,</span> <span class="mi">13291</span><span class="p">,</span> <span class="mi">13516</span><span class="p">,</span> <span class="mi">13614</span><span class="p">,</span> <span class="mi">13829</span><span class="p">,</span> <span class="mi">12636</span><span class="p">,</span> <span class="mi">14596</span><span class="p">,</span> <span class="mi">26409</span><span class="p">,</span> <span class="mi">26608</span><span class="p">,</span> <span class="mi">25636</span><span class="p">,</span> <span class="mi">26278</span><span class="p">,</span> <span class="mi">13814</span><span class="p">,</span> <span class="mi">25432</span><span class="p">,</span> <span class="mi">14700</span><span class="p">,</span> <span class="mi">25574</span><span class="p">,</span> <span class="mi">25109</span><span class="p">,</span> <span class="mi">26232</span><span class="p">,</span> <span class="mi">14480</span><span class="p">,</span> <span class="mi">25578</span><span class="p">,</span> <span class="mi">13662</span><span class="p">,</span> <span class="mi">12402</span><span class="p">,</span> <span class="mi">14340</span><span class="p">,</span> <span class="mi">25768</span><span class="p">,</span> <span class="mi">13738</span><span class="p">,</span> <span class="mi">31963</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="n">z3</span><span class="o">.</span><span class="n">Solver</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">flag</span> <span class="o">=</span> <span class="p">[</span><span class="n">z3</span><span class="o">.</span><span class="n">BitVec</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;flag(</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">)&#34;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">70</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="n">RBX</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="n">R9</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="n">R10</span> <span class="o">=</span> <span class="mh">0x10000</span>
+</span></span><span class="line"><span class="cl"><span class="n">R12</span> <span class="o">=</span> <span class="mh">0x33</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mh">0x46</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">RBX</span> <span class="o">=</span> <span class="p">((</span><span class="n">flag</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="mi">8</span><span class="p">)</span><span class="o">|</span><span class="n">flag</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="n">RBX</span> <span class="o">=</span> <span class="n">RBX</span><span class="o">^</span><span class="n">BX_val</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">RBX</span> <span class="o">=</span> <span class="n">RBX</span><span class="o">^</span><span class="n">RSI_val</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">R9</span> <span class="o">=</span> <span class="n">R9</span><span class="o">|</span><span class="n">RBX</span>
+</span></span><span class="line"><span class="cl">    <span class="n">R9</span> <span class="o">=</span> <span class="p">(</span><span class="n">R9</span><span class="o">+</span><span class="n">R10</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xffffffffffffffff</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">RAX</span> <span class="o">=</span> <span class="n">R9</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">RAX</span><span class="o">==</span><span class="mh">0x460000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">check</span><span class="p">()</span> <span class="o">==</span> <span class="n">z3</span><span class="o">.</span><span class="n">sat</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">model</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">model</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">flag</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">chr</span><span class="p">(</span><span class="n">model</span><span class="p">[</span><span class="n">flag</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">.</span><span class="n">as_long</span><span class="p">())</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">70</span><span class="p">)])</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;:(&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p><strong>FLAG :</strong> <code>FCSC{af22cfdd46bfc8105cb28e04988f904049dd60be1245718ffef5b9bbf9b509d5}</code></p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Nice challenge. You need a little organization for this kind of challenge. There are a lot of steps, but it remains a very nice puzzle type.</p>
+<h2 id="bonus"><strong>BONUS</strong></h2>
+<p>I gave myself the challenge of solving it with the triton DSE to learn more about the framework, here is the solve script</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">triton</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">RSI_val</span> <span class="o">=</span> <span class="p">[</span><span class="mi">299</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">509</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">351</span><span class="p">,</span> <span class="mi">358</span><span class="p">,</span> <span class="mi">465</span><span class="p">,</span> <span class="mi">272</span><span class="p">,</span> <span class="mi">467</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">485</span><span class="p">,</span> <span class="mi">212</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">494</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">472</span><span class="p">,</span> <span class="mi">379</span><span class="p">,</span> <span class="mi">274</span><span class="p">,</span> <span class="mi">205</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">374</span><span class="p">,</span> <span class="mi">417</span><span class="p">,</span> <span class="mi">416</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">282</span><span class="p">,</span> <span class="mi">181</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">471</span><span class="p">,</span> <span class="mi">510</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">459</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">413</span><span class="p">,</span> <span class="mi">428</span><span class="p">,</span> <span class="mi">511</span><span class="p">,</span> <span class="mi">390</span><span class="p">,</span> <span class="mi">369</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">389</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">295</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">473</span><span class="p">,</span> <span class="mi">248</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">306</span><span class="p">,</span> <span class="mi">109</span><span class="p">,</span> <span class="mi">316</span><span class="p">,</span> <span class="mi">335</span><span class="p">,</span> <span class="mi">406</span><span class="p">,</span> <span class="mi">321</span><span class="p">,</span> <span class="mi">192</span><span class="p">,</span> <span class="mi">195</span><span class="p">,</span> <span class="mi">314</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">388</span><span class="p">,</span> <span class="mi">119</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">425</span><span class="p">,</span> <span class="mi">392</span><span class="p">,</span> <span class="mi">107</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">317</span><span class="p">,</span> <span class="mi">204</span><span class="p">,</span> <span class="mi">159</span><span class="p">,</span> <span class="mi">422</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">DSE_code</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">startaddr</span><span class="o">=</span><span class="mh">0x1000</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ctx</span> <span class="o">=</span> <span class="n">TritonContext</span><span class="p">(</span><span class="n">ARCH</span><span class="o">.</span><span class="n">X86_64</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ctx</span><span class="o">.</span><span class="n">setSolver</span><span class="p">(</span><span class="n">SOLVER</span><span class="o">.</span><span class="n">BITWUZLA</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ctx</span><span class="o">.</span><span class="n">setConcreteMemoryAreaValue</span><span class="p">(</span><span class="n">startaddr</span><span class="p">,</span> <span class="n">code</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># ctx.concretizeAllMemory()</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># ctx.concretizeAllRegister()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ctx</span><span class="o">.</span><span class="n">setMode</span><span class="p">(</span><span class="n">MODE</span><span class="o">.</span><span class="n">ALIGNED_MEMORY</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ctx</span><span class="o">.</span><span class="n">setMode</span><span class="p">(</span><span class="n">MODE</span><span class="o">.</span><span class="n">CONSTANT_FOLDING</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ctx</span><span class="o">.</span><span class="n">setMode</span><span class="p">(</span><span class="n">MODE</span><span class="o">.</span><span class="n">AST_OPTIMIZATIONS</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">flag_addr</span> <span class="o">=</span> <span class="mh">0xdead0000</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ctx</span><span class="o">.</span><span class="n">setConcreteRegisterValue</span><span class="p">(</span><span class="n">ctx</span><span class="o">.</span><span class="n">registers</span><span class="o">.</span><span class="n">rip</span><span class="p">,</span> <span class="n">startaddr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">ctx</span><span class="o">.</span><span class="n">setConcreteRegisterValue</span><span class="p">(</span><span class="n">ctx</span><span class="o">.</span><span class="n">registers</span><span class="o">.</span><span class="n">rdi</span><span class="p">,</span> <span class="n">flag_addr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ctx</span><span class="o">.</span><span class="n">setConcreteRegisterValue</span><span class="p">(</span><span class="n">ctx</span><span class="o">.</span><span class="n">registers</span><span class="o">.</span><span class="n">rax</span><span class="p">,</span> <span class="n">flag_addr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># ctx.setConcreteRegisterValue(ctx.registers.r9, 0)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ctx</span><span class="o">.</span><span class="n">setConcreteRegisterValue</span><span class="p">(</span><span class="n">ctx</span><span class="o">.</span><span class="n">registers</span><span class="o">.</span><span class="n">r10</span><span class="p">,</span> <span class="mh">0xffffffffffffff80</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># ctx.setConcreteRegisterValue(ctx.registers.r11, 0)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ctx</span><span class="o">.</span><span class="n">setConcreteRegisterValue</span><span class="p">(</span><span class="n">ctx</span><span class="o">.</span><span class="n">registers</span><span class="o">.</span><span class="n">r12</span><span class="p">,</span> <span class="mh">0x33</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">pc</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">getConcreteRegisterValue</span><span class="p">(</span><span class="n">ctx</span><span class="o">.</span><span class="n">registers</span><span class="o">.</span><span class="n">rip</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">offset</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mh">0x46</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">address</span> <span class="o">=</span> <span class="n">flag_addr</span> <span class="o">+</span> <span class="n">offset</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ctx</span><span class="o">.</span><span class="n">symbolizeMemory</span><span class="p">(</span><span class="n">MemoryAccess</span><span class="p">(</span><span class="n">address</span><span class="p">,</span>  <span class="n">CPUSIZE</span><span class="o">.</span><span class="n">BYTE</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&#34;flag[</span><span class="si">{</span><span class="n">offset</span><span class="si">}</span><span class="s2">]&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">rsicount</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">pc</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="n">ctx</span><span class="o">.</span><span class="n">setConcreteRegisterValue</span><span class="p">(</span><span class="n">ctx</span><span class="o">.</span><span class="n">registers</span><span class="o">.</span><span class="n">r11</span><span class="p">,</span> <span class="p">(</span><span class="n">ctx</span><span class="o">.</span><span class="n">getConcreteRegisterValue</span><span class="p">(</span><span class="n">ctx</span><span class="o">.</span><span class="n">registers</span><span class="o">.</span><span class="n">r11</span><span class="p">)</span><span class="o">-</span><span class="mi">7</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xffffffffffffffff</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">opcodes</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">getConcreteMemoryAreaValue</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">instruction</span> <span class="o">=</span> <span class="n">Instruction</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span> <span class="n">opcodes</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ctx</span><span class="o">.</span><span class="n">disassembly</span><span class="p">(</span><span class="n">instruction</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">ctx</span><span class="o">.</span><span class="n">registers</span><span class="o">.</span><span class="n">rsi</span> <span class="ow">in</span> <span class="n">instruction</span><span class="o">.</span><span class="n">getOperands</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ctx</span><span class="o">.</span><span class="n">setConcreteRegisterValue</span><span class="p">(</span><span class="n">ctx</span><span class="o">.</span><span class="n">registers</span><span class="o">.</span><span class="n">rsi</span><span class="p">,</span> <span class="n">RSI_val</span><span class="p">[</span><span class="n">rsicount</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="n">rsicount</span><span class="o">+=</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">ctx</span><span class="o">.</span><span class="n">processing</span><span class="p">(</span><span class="n">instruction</span><span class="p">)</span> <span class="o">==</span> <span class="n">EXCEPTION</span><span class="o">.</span><span class="n">FAULT_UD</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;[-] Instruction is not supported: </span><span class="si">{</span><span class="n">instruction</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">break</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="n">pc</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">getConcreteRegisterValue</span><span class="p">(</span><span class="n">ctx</span><span class="o">.</span><span class="n">registers</span><span class="o">.</span><span class="n">rip</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">    <span class="c1"># print(hex(ctx.getConcreteRegisterValue(ctx.registers.rax)))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ast</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">getAstContext</span><span class="p">()</span>    
+</span></span><span class="line"><span class="cl">    <span class="n">expr</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">equal</span><span class="p">(</span><span class="n">ctx</span><span class="o">.</span><span class="n">getSymbolicRegister</span><span class="p">(</span><span class="n">ctx</span><span class="o">.</span><span class="n">registers</span><span class="o">.</span><span class="n">rax</span><span class="p">)</span><span class="o">.</span><span class="n">getAst</span><span class="p">(),</span> <span class="n">ast</span><span class="o">.</span><span class="n">bv</span><span class="p">(</span><span class="mh">0x460000</span><span class="p">,</span><span class="mi">64</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># print(expr)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">model</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">getModel</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">flag</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">flag</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">model</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">getValue</span><span class="p">()))</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="n">flag</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;shellcode.bin&#34;</span><span class="p">,</span> <span class="s2">&#34;rb&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span> <span class="c1"># the plain shellcode dumped with the seed 972893146 (start with push 0x7F)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># print(data.hex())</span>
+</span></span><span class="line"><span class="cl">    <span class="n">DSE_code</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></div>
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/p2lu" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://twitter.com/Prince2lu2" target="_blank" rel="noopener noreferrer me"
+    title="Twitter">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+    </path>
+</svg>
+</a>
+<a href="https://www.root-me.org/Prince2Lu" target="_blank" rel="noopener noreferrer me"
+    title="Root-Me">
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="234.000000pt" height="300.000000pt" viewBox="0 0 234.000000 300.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)"
+fill="#888a90" stroke="none">
+<path d="M968 2983 c-15 -9 -35 -32 -45 -50 -10 -18 -23 -33 -29 -33 -29 0
+-177 -56 -259 -98 -445 -229 -700 -729 -620 -1220 8 -51 28 -134 45 -184 26
+-82 27 -93 14 -112 -32 -46 -10 -139 40 -165 l26 -14 2 -246 3 -246 192 -135
+193 -135 0 -161 c0 -111 4 -164 12 -172 9 -9 163 -12 630 -12 600 0 618 1 628
+19 5 11 10 87 10 174 l0 154 195 137 195 137 0 241 0 241 35 38 c38 42 46 93
+24 142 -9 19 -5 41 19 113 121 361 56 760 -173 1065 -152 203 -371 356 -602
+421 -69 20 -82 27 -91 50 -11 31 -66 68 -100 68 -38 0 -92 -30 -107 -61 -33
+-63 -8 -147 51 -169 l24 -10 0 -224 c0 -145 4 -227 10 -231 6 -4 53 8 104 26
+l92 33 27 -20 c25 -18 26 -22 27 -120 l0 -101 -61 -67 c-75 -82 -250 -229
+-260 -219 -4 5 -35 74 -69 155 l-63 147 22 27 c25 31 26 55 6 93 -42 82 -171
+48 -168 -45 1 -40 24 -70 68 -88 26 -11 39 -33 98 -171 37 -86 67 -158 65
+-160 -9 -8 -187 -124 -215 -140 l-32 -19 -202 61 -203 61 -64 -24 c-56 -21
+-67 -22 -81 -10 -55 48 -151 4 -151 -70 0 -30 30 -71 59 -84 55 -22 113 10
+126 70 5 22 17 32 59 48 l54 20 170 -51 c94 -28 169 -54 166 -58 -8 -14 -335
+-170 -467 -223 -133 -54 -139 -55 -182 -44 -49 13 -56 26 -96 173 -18 66 -22
+109 -23 245 -1 91 2 177 7 193 l7 27 258 0 258 0 22 -29 c52 -70 162 -33 162
+54 0 37 -16 62 -51 81 -40 20 -84 10 -111 -27 l-22 -29 -253 0 c-139 0 -253 2
+-253 3 0 2 9 33 21 68 107 327 361 586 680 694 89 31 90 31 135 0 53 -36 103
+-34 148 6 58 51 58 125 1 179 -32 30 -101 37 -137 13z m97 -68 c30 -29 31 -49
+5 -75 -28 -28 -66 -26 -86 5 -20 31 -12 68 18 83 33 15 36 15 63 -13z m273 9
+c32 -22 27 -73 -9 -93 -24 -13 -29 -13 -53 2 -34 22 -36 69 -4 91 28 20 38 20
+66 0z m154 -128 c69 -20 170 -65 226 -100 39 -24 42 -30 42 -70 0 -97 -83
+-322 -150 -406 l-20 -25 0 65 c0 60 2 68 30 92 62 54 27 158 -53 158 -43 0
+-83 -31 -92 -69 -5 -25 -16 -33 -71 -55 -35 -14 -66 -26 -69 -26 -3 0 -5 90
+-5 200 0 199 0 201 23 209 12 5 31 18 41 30 11 12 25 20 30 18 6 -2 36 -12 68
+-21z m403 -230 c143 -117 283 -361 332 -579 39 -172 -52 -376 -254 -567 -164
+-155 -462 -335 -725 -439 l-78 -31 -97 20 c-165 34 -364 92 -513 149 l-55 21
+52 -48 52 -48 0 -66 c-2 -263 324 -355 463 -130 20 32 23 34 69 28 45 -6 54
+-12 161 -120 93 -94 121 -116 157 -126 57 -15 73 -9 288 112 116 65 169 101
+179 120 11 20 14 73 14 213 l0 187 103 101 c57 56 123 130 147 165 23 34 44
+62 46 62 7 0 -9 -67 -37 -156 l-29 -91 -38 -7 c-45 -7 -81 -41 -91 -88 -10
+-51 -3 -76 35 -113 l34 -34 0 -218 c0 -216 0 -218 -22 -232 -48 -29 -347 -243
+-357 -255 -6 -7 -12 -76 -13 -157 l-3 -144 -90 0 -90 0 -3 50 c-3 72 -10 93
+-32 105 -14 8 -26 8 -40 0 -17 -9 -20 -21 -20 -70 0 -92 2 -90 -111 -90 -117
+0 -120 3 -117 109 2 77 -10 101 -48 101 -33 0 -44 -33 -44 -131 l0 -80 -107 3
+-108 3 -3 66 c-2 51 -8 71 -22 84 -18 16 -21 16 -44 1 -22 -14 -25 -24 -28
+-83 l-3 -68 -90 0 -90 0 -3 147 -3 148 -72 53 c-39 29 -127 91 -194 137 l-122
+85 -1 222 0 221 30 30 c18 19 32 45 36 69 l6 39 121 48 c663 262 1159 641
+1341 1026 35 74 76 212 76 257 0 30 5 29 55 -11z m-1687 -1302 c24 -17 30 -62
+10 -82 -17 -17 -64 -15 -82 4 -23 22 -20 60 6 78 12 9 27 16 33 16 6 0 21 -7
+33 -16z m1978 8 c6 -4 16 -17 23 -29 31 -60 -64 -105 -101 -49 -29 43 35 107
+78 78z m-1285 -362 c39 -11 74 -21 76 -23 10 -11 -43 -58 -77 -68 -98 -30
+-200 41 -200 139 l0 31 64 -29 c36 -16 97 -39 137 -50z"/>
+<path d="M1140 598 c-52 -56 -101 -129 -98 -145 5 -26 50 -28 73 -3 24 27 84
+27 119 -1 14 -11 34 -19 44 -17 34 6 24 44 -30 109 -74 90 -76 91 -108 57z"/>
+<path d="M1010 2633 c-26 -9 -60 -46 -60 -63 0 -11 -16 -23 -42 -33 -24 -9
+-69 -26 -100 -37 l-57 -21 -3 -66 -3 -66 -68 1 c-62 0 -69 2 -96 31 -41 44
+-98 44 -135 0 -35 -41 -34 -83 3 -120 44 -43 114 -35 142 17 12 23 18 24 105
+24 l93 0 3 72 3 72 78 29 79 29 21 -20 c33 -31 71 -37 106 -16 48 29 62 74 37
+123 -21 39 -67 58 -106 44z"/>
+</g>
+</svg>
+</a>
+<a href="/index.xml" target="_blank" rel="noopener noreferrer me"
+    title="Rss">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2025 .
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+    
+    
+        
+    
+
+    
+    
+        
+    
+
+
+
+    
+    <script src="https://p2lu.github.io/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js" integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30&#43;lSNuSkl4QXuNyy8="></script>
+
+    
+
+</body>
+</html>
