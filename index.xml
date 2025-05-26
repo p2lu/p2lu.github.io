@@ -2,7 +2,6 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on Prince 2 lu&#39;s blog</title>
-<<<<<<< HEAD
     <link>https://p2lu.github.io/</link>
     <description>Recent content in Home on Prince 2 lu&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -14,19 +13,6 @@
       <pubDate>Sun, 27 Apr 2025 00:00:00 +0000</pubDate>
       
       <guid>https://p2lu.github.io/posts/displayport/writeup/</guid>
-=======
-    <link>http://localhost:1313/</link>
-    <description>Recent content in Home on Prince 2 lu&#39;s blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language>
-    <lastBuildDate>Sun, 27 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>🇫🇷 FCSC | DisplayPort ⭐⭐⭐</title>
-      <link>http://localhost:1313/posts/displayport/writeup/</link>
-      <pubDate>Sun, 27 Apr 2025 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/displayport/writeup/</guid>
->>>>>>> 6fb69cfecda565325d8b4d2cb5cf055d9c5ca34c
       
       <description>Hardware: Display Port ⭐⭐⭐ Ce challenge nous présente le résultat d&amp;rsquo;une capture décodée du signal différentiel entre les pin #1 et #3
 On a pas mal d&amp;rsquo;informations à propos de la norme, des dimensions et des caractéristiques de l&amp;rsquo;écran, tout ne va pas nous servir tout de suite. Il faut y aller pas à pas.
@@ -36,17 +22,10 @@ Une 1ere recherche rapide sur Wikipédia nous apprend que les pin 1 et 3 corresp
     
     <item>
       <title>🇫🇷 FCSC | FCSCLang ⭐⭐⭐</title>
-<<<<<<< HEAD
       <link>https://p2lu.github.io/posts/fcsclang/writeup/</link>
       <pubDate>Sun, 27 Apr 2025 00:00:00 +0000</pubDate>
       
       <guid>https://p2lu.github.io/posts/fcsclang/writeup/</guid>
-=======
-      <link>http://localhost:1313/posts/fcsclang/writeup/</link>
-      <pubDate>Sun, 27 Apr 2025 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/fcsclang/writeup/</guid>
->>>>>>> 6fb69cfecda565325d8b4d2cb5cf055d9c5ca34c
       
       <description>Reverse: FCSCLang ⭐⭐⭐ Introduction On ouvre l&amp;rsquo;archive et on découvre
 fcsclang un binaire ELF 64-bit. libfcsclang.so une librairie ELF 64 bit. program.fcsc un grand fichier texte. Pour lancer correctement le binaire, il nous faut la version 0.22 de libtree-sitter
@@ -56,17 +35,10 @@ On remarque imédiatement que program.fcsc contient du texte complètement lisib
     
     <item>
       <title>🇫🇷 MIDNIGHT BACKSLASH Qualif | [Hard]</title>
-<<<<<<< HEAD
       <link>https://p2lu.github.io/posts/deck_decoder/wu/</link>
       <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
       
       <guid>https://p2lu.github.io/posts/deck_decoder/wu/</guid>
-=======
-      <link>http://localhost:1313/posts/deck_decoder/wu/</link>
-      <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/deck_decoder/wu/</guid>
->>>>>>> 6fb69cfecda565325d8b4d2cb5cf055d9c5ca34c
       
       <description>Deck Decoder J&amp;rsquo;ai pu participer à la création de challenges lors de l&amp;rsquo;édition 2024 du Midnight Flag CTF.
 Voici le writeup &amp;ldquo;untended&amp;rdquo; du challenge.
@@ -78,17 +50,10 @@ On trouve arapidement un array de chaines d&amp;rsquo;octets qui semble subir pl
     
     <item>
       <title>🇬🇧 HTBA | Maze Of Power [Insane]</title>
-<<<<<<< HEAD
       <link>https://p2lu.github.io/posts/mazeofpower-wu/writeup/</link>
       <pubDate>Tue, 12 Mar 2024 00:00:00 +0000</pubDate>
       
       <guid>https://p2lu.github.io/posts/mazeofpower-wu/writeup/</guid>
-=======
-      <link>http://localhost:1313/posts/mazeofpower-wu/writeup/</link>
-      <pubDate>Tue, 12 Mar 2024 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/mazeofpower-wu/writeup/</guid>
->>>>>>> 6fb69cfecda565325d8b4d2cb5cf055d9c5ca34c
       
       <description>MazeOfPower This challenge was a insane reverse engineering challenge from the Hack The Box Apocalypse 2024 CTF
 Initial Recon We are facing a ELF x86_64 binary with debug symbols.
@@ -99,17 +64,10 @@ The binary is asking for the pow solution, I don&amp;rsquo;t have time to solve 
     
     <item>
       <title>🇬🇧 FCSC | ShuffleMe ⭐⭐</title>
-<<<<<<< HEAD
       <link>https://p2lu.github.io/posts/shuffleme-wu/writeup/</link>
       <pubDate>Sun, 07 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://p2lu.github.io/posts/shuffleme-wu/writeup/</guid>
-=======
-      <link>http://localhost:1313/posts/shuffleme-wu/writeup/</link>
-      <pubDate>Sun, 07 Jan 2024 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/shuffleme-wu/writeup/</guid>
->>>>>>> 6fb69cfecda565325d8b4d2cb5cf055d9c5ca34c
       
       <description>ShuffleMe ShuffleMe is a reverse challenge from the FCSC edition 2021 from Cryptanalyse.
 Recover the inputs to get the flag.
@@ -121,17 +79,10 @@ int main(int argc,char **argv) { uint8_t buffer [80]; long local_18; int local_c
     
     <item>
       <title>🇬🇧 FCSC | Chaussette ⭐⭐</title>
-<<<<<<< HEAD
       <link>https://p2lu.github.io/posts/chausette-wu/writeup/</link>
       <pubDate>Wed, 20 Dec 2023 00:00:00 +0000</pubDate>
       
       <guid>https://p2lu.github.io/posts/chausette-wu/writeup/</guid>
-=======
-      <link>http://localhost:1313/posts/chausette-wu/writeup/</link>
-      <pubDate>Wed, 20 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/chausette-wu/writeup/</guid>
->>>>>>> 6fb69cfecda565325d8b4d2cb5cf055d9c5ca34c
       
       <description>Chaussette To improve my skills in mastering the symbolic execution framework, I tried to solve this challenge with as many means as possible.
 I skipped the first reversing part which is not the interest here.
@@ -142,17 +93,10 @@ The goal is to find input when RAX==0 at the end of the shellcode.</description>
     
     <item>
       <title>🇬🇧 DUCTF | Sideways</title>
-<<<<<<< HEAD
       <link>https://p2lu.github.io/posts/sideways/writeup/</link>
       <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://p2lu.github.io/posts/sideways/writeup/</guid>
-=======
-      <link>http://localhost:1313/posts/sideways/writeup/</link>
-      <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/sideways/writeup/</guid>
->>>>>>> 6fb69cfecda565325d8b4d2cb5cf055d9c5ca34c
       
       <description>Sideways Sideways was a medium challenge from the DUCTF 2023.
 I managed to solve it using the miasm framework
@@ -166,17 +110,10 @@ the product is then send to a absolutely chaotic set of manipulation.</descripti
     
     <item>
       <title>🇫🇷 ph0wn Musical Ear</title>
-<<<<<<< HEAD
       <link>https://p2lu.github.io/posts/ph0wn_musical_ear/writeup/</link>
       <pubDate>Sat, 05 Aug 2023 00:00:00 +0000</pubDate>
       
       <guid>https://p2lu.github.io/posts/ph0wn_musical_ear/writeup/</guid>
-=======
-      <link>http://localhost:1313/posts/ph0wn_musical_ear/writeup/</link>
-      <pubDate>Sat, 05 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/ph0wn_musical_ear/writeup/</guid>
->>>>>>> 6fb69cfecda565325d8b4d2cb5cf055d9c5ca34c
       
       <description>ph0wn Musical Ear Ce challenge etait proposé à l&amp;rsquo;édition 2021 du ph0wn, je n&amp;rsquo;ai pas participé à cette édition mais ait réalisé le challenge plusieurs mois après.
 Le writeup officiel est disponnible ici
@@ -188,17 +125,10 @@ Le bouton play sound nous joue une note, le jeu consistera à trouver parfaiteme
     
     <item>
       <title>🇫🇷 PWNME 2023 | Nanobits [Insane]</title>
-<<<<<<< HEAD
       <link>https://p2lu.github.io/posts/pwnme_nanobits/writeup/</link>
       <pubDate>Fri, 05 May 2023 00:00:00 +0000</pubDate>
       
       <guid>https://p2lu.github.io/posts/pwnme_nanobits/writeup/</guid>
-=======
-      <link>http://localhost:1313/posts/pwnme_nanobits/writeup/</link>
-      <pubDate>Fri, 05 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/pwnme_nanobits/writeup/</guid>
->>>>>>> 6fb69cfecda565325d8b4d2cb5cf055d9c5ca34c
       
       <description>Nanobits Premièrement le fichier donné est au format PE, il faudra donc un environnement Windows pour espérer le lancer.
 On utilise Ghidra pour découvrir le binaire, le début est très difficilement compréhensible et on a du mal à se repérer.
@@ -209,17 +139,10 @@ Usuellement on trouve les nanomites sur des binaires ELF avec des traces comme l
     
     <item>
       <title></title>
-<<<<<<< HEAD
       <link>https://p2lu.github.io/pages/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://p2lu.github.io/pages/about/</guid>
-=======
-      <link>http://localhost:1313/pages/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/pages/about/</guid>
->>>>>>> 6fb69cfecda565325d8b4d2cb5cf055d9c5ca34c
       
       <description>I&amp;rsquo;m a 19yo student at Ecole 2600 and apprentice at Serma Safety &amp;amp; Security.
 Here you&amp;rsquo;ll be able to find some write-ups about interesting challenges that I&amp;rsquo;ve solved during CTFs (mostly reverse-engineering challenges).
